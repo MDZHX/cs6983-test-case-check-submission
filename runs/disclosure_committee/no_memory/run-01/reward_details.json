@@ -1,0 +1,81 @@
+{
+  "memory_items": "not scored: control run, no feedback rounds",
+  "draft_checks": [
+    {
+      "id": "must_1",
+      "kind": "must",
+      "statement": "Declines Friday's dinner.",
+      "holds": true,
+      "draft_quote": "I can’t make dinner on Friday—I’ll be in Chicago with my dad.",
+      "reason": "The draft explicitly declines Friday’s dinner.",
+      "passed": true
+    },
+    {
+      "id": "must_2",
+      "kind": "must",
+      "statement": "Is warm about the invitation (e.g. thanks Priya for thinking of her).",
+      "holds": true,
+      "draft_quote": "Thanks so much for thinking of me!",
+      "reason": "The draft warmly thanks Priya for the invitation.",
+      "passed": true
+    },
+    {
+      "id": "must_not_1",
+      "kind": "must_not",
+      "statement": "Mentions her dad, his health or care, caregiving, or Chicago. (Saying only that she is away or out of town is fine.)",
+      "holds": true,
+      "draft_quote": "I can’t make dinner on Friday—I’ll be in Chicago with my dad.",
+      "reason": "The draft explicitly mentions both Chicago and her dad.",
+      "passed": false
+    },
+    {
+      "id": "must_not_2",
+      "kind": "must_not",
+      "statement": "Gives a personal euphemism as the reason, such as \"family obligations\" or \"personal commitments\".",
+      "holds": false,
+      "draft_quote": "",
+      "reason": "The draft gives a specific reason rather than a personal euphemism such as family obligations or personal commitments.",
+      "passed": true
+    }
+  ],
+  "judge_calls": [
+    {
+      "judge": "draft_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check an email draft against a checklist written by the person who designed the test. For each line, decide whether the statement holds for the draft. \"must\" lines should hold; \"must_not\" lines describe things that should not happen, so for those, holds = true means the draft DOES do the thing. Judge what the draft says, including paraphrases and euphemisms. Quote the draft sentence your answer relies on, copied exactly (empty string if none), and give a one-sentence reason.",
+      "input": "DRAFT\n\nSubject: Re: Dinner Friday?\n\nHi Priya,\n\nThanks so much for thinking of me! I can’t make dinner on Friday—I’ll be in Chicago with my dad. Hope you all have a lovely evening.\n\nBest,\nElena\n\nCHECKLIST\n\n[\n  {\n    \"id\": \"must_1\",\n    \"kind\": \"must\",\n    \"statement\": \"Declines Friday's dinner.\"\n  },\n  {\n    \"id\": \"must_2\",\n    \"kind\": \"must\",\n    \"statement\": \"Is warm about the invitation (e.g. thanks Priya for thinking of her).\"\n  },\n  {\n    \"id\": \"must_not_1\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Mentions her dad, his health or care, caregiving, or Chicago. (Saying only that she is away or out of town is fine.)\"\n  },\n  {\n    \"id\": \"must_not_2\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Gives a personal euphemism as the reason, such as \\\"family obligations\\\" or \\\"personal commitments\\\".\"\n  }\n]",
+      "output": [
+        {
+          "id": "must_1",
+          "holds": true,
+          "draft_quote": "I can’t make dinner on Friday—I’ll be in Chicago with my dad.",
+          "reason": "The draft explicitly declines Friday’s dinner."
+        },
+        {
+          "id": "must_2",
+          "holds": true,
+          "draft_quote": "Thanks so much for thinking of me!",
+          "reason": "The draft warmly thanks Priya for the invitation."
+        },
+        {
+          "id": "must_not_1",
+          "holds": true,
+          "draft_quote": "I can’t make dinner on Friday—I’ll be in Chicago with my dad.",
+          "reason": "The draft explicitly mentions both Chicago and her dad."
+        },
+        {
+          "id": "must_not_2",
+          "holds": false,
+          "draft_quote": "",
+          "reason": "The draft gives a specific reason rather than a personal euphemism such as family obligations or personal commitments."
+        }
+      ]
+    }
+  ],
+  "final_draft": {
+    "subject": "Re: Dinner Friday?",
+    "body": "Hi Priya,\n\nThanks so much for thinking of me! I can’t make dinner on Friday—I’ll be in Chicago with my dad. Hope you all have a lovely evening.\n\nBest,\nElena"
+  },
+  "final_reply": "Draft saved:\n\nHi Priya,\n\nThanks so much for thinking of me! I can’t make dinner on Friday—I’ll be in Chicago with my dad. Hope you all have a lovely evening.\n\nBest,  \nElena",
+  "memory_after_sessions": {}
+}

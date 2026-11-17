@@ -1,0 +1,25 @@
+name: Prof. Jane Doe
+first_name: Jane
+email: jane.doe@univ.edu
+description: >-
+  Jane is an Associate Professor of Computer Science. She is teaching CS 4100 (Artificial Intelligence)
+  in Fall 2026. Students in CS 4100 each have three late days for the semester.
+contacts:
+- email: priya.nair@univ.edu
+  name: Priya Nair
+  role: undergraduate student in CS 4100
+- email: marcus.bell@univ.edu
+  name: Marcus Bell
+  role: undergraduate student in CS 4100
+- email: jordan.lee@univ.edu
+  name: Jordan Lee
+  role: undergraduate student in CS 4100
+- email: sam.ortiz@univ.edu
+  name: Sam Ortiz
+  role: undergraduate student in CS 4100
+- email: leo.tran@univ.edu
+  name: Leo Tran
+  role: undergraduate student in CS 4100
+- email: ravi.mehta@univ.edu
+  name: Prof. Ravi Mehta
+  role: faculty (peer, frequent collaborator)

@@ -1,0 +1,18 @@
+# Angle: stale memory. Jane never announces a change. In September she grants extensions for the flu
+# and for job-interview travel; in October, for the same reasons, she points students to their late days.
+# The final request (Leo, the flu) matches an observed reason. P1 is scoped to those reasons only.
+preferences:
+- id: P1
+  rule: In the October flu and job-interview-travel examples, points students to their late days rather than granting a new individual deadline; this is the latest observed practice for these situations.
+  scope: CS 4100 students requesting more time for flu or job-interview travel from October onward, including a new student with the same stated circumstances. A qualified description of the latest observed practice is sufficient; an exception-free rule for every possible reason is not required.
+  evidence: [04_jordan_flu, 05_sam_interview]
+outdated:
+- id: R1
+  practice: Grants individual extensions for the observed flu and job-interview-travel requests, as in the September examples with Priya and Marcus.
+  replaced_by: The October replies to matched flu and job-interview-travel requests use existing late days rather than granting a new individual deadline (P1).
+  evidence: [01_priya_flu, 02_marcus_interview, 04_jordan_flu, 05_sam_interview]
+must:
+- Responds to Leo's request about Problem Set 6.
+- Directs Leo to use his available late days if he needs more time, consistent with the October flu example.
+must_not:
+- Grants Leo an individual extension or a new deadline outside the existing late-day allowance.

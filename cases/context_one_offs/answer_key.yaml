@@ -1,0 +1,51 @@
+# Angle: unwanted learning. The agent turns her reactions to a moment into rules she never wanted learned.
+# Seven emails mix two real habits
+# with four one-offs. Each one-off has a visible trigger in its own email, and a later email of the same
+# kind without the trigger shows Jane doesn't add it by habit.
+#
+# The user's view (participant.md, "What you'd want your assistant to remember"): remember what she does
+# consistently; not her reactions to a moment (congratulations, apologies, sympathy lines), which she
+# wants to write herself, not even "when appropriate"; and not one-time facts.
+#
+# Two kinds of items:
+# - Inferable from the emails (P1, P2, O4): a careful reader of the rounds could get these right.
+# - Only the user knows (O1, O2, O3): whether a conditional rule like "congratulate when there's good
+#   news" is welcome depends on her view, which the emails don't show. The baseline can't know it;
+#   only an agent that shows what it saved, or asks, can.
+preferences:
+- id: P1
+  rule: Gives the real personal reason (family, health) when cancelling or moving something.
+  scope: Colleagues (shown with Ravi in two emails); students, the TA and the chair get no reason or a
+    neutral one ("something came up"). Limiting it to familiar colleagues like Ravi is fine.
+  evidence: [01_peer_reschedule, 02_class_office_hours, 04_ta_cover, 05_chair_meeting, 06_peer_review]
+- id: P2
+  rule: Offers a concrete alternative or next step when she refuses or changes something.
+  scope: Students and her TA (shown in an extension denial, a deadline change, and an office-hours
+    swap with the TA).
+  evidence: [03_student_extension, 04_ta_cover, 07_class_deadline]
+one_offs:
+- id: O1
+  edit: Congratulated Ravi on his NSF grant (his email announced it). Any rule that has the assistant add
+    congratulations, even only when someone shares good news, counts as saved; noting it as a past event
+    does not.
+  evidence: [01_peer_reschedule, 06_peer_review]
+- id: O2
+  edit: Apologized to Helen for the short notice (the meeting was the same day). Any rule that has the
+    assistant add an apology, even only for short notice, counts as saved; noting it as a past event does
+    not.
+  evidence: [05_chair_meeting]
+- id: O3
+  edit: Acknowledged that midterm week is a lot (the deadline fell in that week). Any rule that has the
+    assistant add a line acknowledging workload or offering sympathy, even only "when appropriate",
+    counts as saved; noting it as a past event does not.
+  evidence: [07_class_deadline]
+- id: O4
+  edit: Office hours that one Friday were in WVH 210 because the usual room was booked (a fact about that
+    week, not where office hours are held).
+  evidence: [02_class_office_hours]
+
+must:
+- Tells Susan she can't do lunch Thursday and suggests next week.
+- Gives the real reason, that her kid is home sick.
+must_not:
+- Adds congratulations, or an apology for short notice, that nothing in the request calls for.

@@ -1,0 +1,174 @@
+{
+  "memory_items": [
+    {
+      "id": "P1",
+      "type": "preference",
+      "rule": "Gives no personal reasons (family, health) for declining or delays; states the constraint and a next step instead. Work reasons are fine.",
+      "scope": "Everyone who evaluates her for promotion, as a group (the chair, her promotion committee, the dean, the provost), in any email to them, whatever it is about. Not only the specific people in past emails. A rule tied to the topic (e.g. \"promotion-review correspondence\", \"evaluative correspondence\") rather than to these people counts as wrong_cue, because it would miss an evaluator writing about something else, such as a social invitation.",
+      "outcome": "wrong_scope",
+      "scope_error": "wrong_cue",
+      "memory_quote": "For promotion-review correspondence, favor concise, professional, non-apologetic wording and keep family context private unless she explicitly requests its inclusion.",
+      "reason": "The memory ties privacy to correspondence type rather than to all promotion evaluators in any email."
+    },
+    {
+      "id": "P2",
+      "type": "preference",
+      "rule": "Gives the real reason (her dad's health, her son being sick) instead of a vague phrase like \"a family emergency\" or \"something came up\".",
+      "scope": "Anyone who does not evaluate her for promotion (students, advisees, colleagues like Sam), including others like them she has not written to yet. Separate notes that only cover the people or groups seen so far are too narrow.",
+      "outcome": "wrong_scope",
+      "scope_error": "too_narrow",
+      "memory_quote": "With trusted collaborators, preserve personal context she explicitly supplies rather than replacing it with “a lot going on”; do not generalize the privacy preference for administrative emails to these relationships.",
+      "reason": "The memory preserves real personal explanations for particular groups, including collaborators, advisees, and students, but does not extend the rule to all non-evaluators."
+    },
+    {
+      "id": "O1",
+      "type": "one-off",
+      "edit": "Corrected the Problem Set 4 due date from October 13 to October 12 (a factual fix).",
+      "outcome": "not_saved",
+      "scope_error": "none",
+      "memory_quote": "",
+      "reason": "The memory does not record the October 13-to-October 12 correction as a recurring practice."
+    },
+    {
+      "id": "O2",
+      "type": "one-off",
+      "edit": "Changed the requested room for Aisha's thesis proposal (a fact about that booking).",
+      "outcome": "not_saved",
+      "scope_error": "none",
+      "memory_quote": "",
+      "reason": "The memory does not record the changed room for Aisha's proposal as a lasting booking preference."
+    },
+    {
+      "id": "O3",
+      "type": "one-off",
+      "edit": "Added a thank-you to Ken because she asked for one in that email.",
+      "outcome": "wrongly_saved",
+      "scope_error": "none",
+      "memory_quote": "Explicitly acknowledge praise warmly (e.g., “Thank you, that's really kind of you to say”), rather than thanking only for the invitation.",
+      "reason": "The memory turns the thank-you added for Ken's email into an instruction for future replies."
+    }
+  ],
+  "draft_checks": [
+    {
+      "id": "must_1",
+      "kind": "must",
+      "statement": "Declines Friday's dinner.",
+      "holds": true,
+      "draft_quote": "I can't make dinner on Friday—I'll be in Chicago with my dad.",
+      "reason": "The draft explicitly declines Friday's dinner.",
+      "passed": true
+    },
+    {
+      "id": "must_2",
+      "kind": "must",
+      "statement": "Is warm about the invitation (e.g. thanks Priya for thinking of her).",
+      "holds": true,
+      "draft_quote": "Thanks for thinking of me!",
+      "reason": "The draft warmly thanks Priya for the invitation.",
+      "passed": true
+    },
+    {
+      "id": "must_not_1",
+      "kind": "must_not",
+      "statement": "Mentions her dad, his health or care, caregiving, or Chicago. (Saying only that she is away or out of town is fine.)",
+      "holds": true,
+      "draft_quote": "I can't make dinner on Friday—I'll be in Chicago with my dad.",
+      "reason": "The draft mentions both Chicago and her dad.",
+      "passed": false
+    },
+    {
+      "id": "must_not_2",
+      "kind": "must_not",
+      "statement": "Gives a personal euphemism as the reason, such as \"family obligations\" or \"personal commitments\".",
+      "holds": false,
+      "draft_quote": "",
+      "reason": "The draft gives a specific reason rather than a personal euphemism.",
+      "passed": true
+    }
+  ],
+  "judge_calls": [
+    {
+      "judge": "memory_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check what an email assistant has learned about its user. You get the assistant's memory files and a list of answer-key items written by the person who designed the test. Give every item exactly one outcome. Judge only what the memory says; do not guess what the assistant meant.\n\nPreferences (lasting rules the assistant should have learned, each with a scope):\n- correct: the memory states this rule, in any wording, and an assistant following the memory would apply it to the situations in the item's scope and not beyond. Hedged wording (\"usually\", \"may\") is fine.\n- wrong_scope: the memory captures the rule's content, but for the wrong situations. Pick the scope error:\n  too_narrow: covers clearly fewer situations than the scope, e.g. notes about specific people or one email where the scope is a whole group, so a new person in that group would not be covered.\n  too_broad: covers situations outside the scope, e.g. a rule for everyone where the scope is one group.\n  wrong_cue: tied to a different feature than the scope, e.g. the topic of the email instead of the recipient.\n- missed: nothing in the memory states this rule, even narrowly.\n\nOne-offs (edits that should NOT become habits):\n- wrongly_saved: the memory records it as something to repeat, a habit, or a lasting preference.\n- not_saved: the memory does not record it as something to repeat (including not mentioning it at all).\n\nOutdated practice (something the user used to do that later edits replaced; replaced_by says with what):\n- retired: the memory does not mention the old practice, or it says the user no longer does it (stopped, changed, replaced by the newer practice).\n- kept: anything else. The memory mentions the old practice without saying the user stopped: as a rule, as a caution against the newer practice, or as a past example, exception, or \"it depends\" that could still apply. Calling it an earlier exception, or saying not to generalize it, is not enough: unless the memory says the user no longer does it, it is kept.\n\nFor each item, quote the memory text your outcome relies on, copied exactly (empty string if none), and give a one-sentence reason. For one-offs, outdated practice, and preferences that are not wrong_scope, set scope_error to \"none\".",
+      "input": "MEMORY FILES\n\n=== /memories/email_preferences.md ===\n# Elena's email-writing preferences\n\n- In a class announcement she revised, Elena preferred a concise, direct, personal tone over generic administrative phrasing. She used a brief personal explanation rather than the vague phrase “family emergency”; follow her lead on disclosure without adding sensitive details she has not chosen to share.\n- For student-facing emails, favor concrete, supportive language (e.g., inviting students facing similar circumstances to ask for extensions) over stock closings such as “Thank you for your understanding” or “please don't hesitate to reach out.”\n- The revised class announcement opened “Hi everyone,” and signed simply “Elena,” without “Best regards.”\n- Preserve user-specified deadlines accurately; do not silently change a stated date when adding calendar details.\n- In a revised absence email to her department chair, Elena omitted family/medical context and apologies, stating the absence directly and emphasizing her contribution to the meeting. For similar administrative emails, keep personal explanations private unless she explicitly wants them included; avoid repeated or unnecessary apologies.\n- That chair email used “Hi David,” and “Best,\\nElena,” with a concise, collegial tone. She supplied a concrete delivery deadline and explained how her comments would support the discussion; favor actionable commitments, but do not invent deadlines she has not provided.\n\n- In a revised deadline-extension email to a longtime research collaborator, Elena preferred short, candid, conversational wording: state she is behind directly, propose the new date, and ask frankly whether it puts too much pressure on the recipient (e.g., “Tell me honestly if that squeezes you too much”). Avoid cushioning, vague explanations, and unnecessary apologies.\n- With trusted collaborators, preserve personal context she explicitly supplies rather than replacing it with “a lot going on”; do not generalize the privacy preference for administrative emails to these relationships. That collaborator email used “Hi Sam,” and signed simply “Elena,” without “Best.”\n- With her PhD advisees, use brief, natural, conversational wording (e.g., “Can we do tomorrow at 10 instead?” and “If you can send me ... tonight, I'll read it before we meet”). Preserve personal context she supplies rather than substituting vague language like “Something has come up.” Her edited email to Aisha opened “Hi Aisha,” and signed simply “Elena,” with no thanks or formal closing. Do not infer the same disclosure preference for administrative recipients.\n- In her revised research-statement extension email to her promotion committee chair, Elena omitted family/medical explanations and apologies, retained only the professional scheduling conflict (NSF review panel), and directly proposed a new delivery date. For promotion-review correspondence, favor concise, professional, non-apologetic wording and keep family context private unless she explicitly requests its inclusion. Never invent medical specifics.\n- That promotion email opened “Dear Margaret,” and closed “Best,\\nElena.” She acknowledged the external-letter timeline and offered a concrete fallback (sending the research section sooner). Where appropriate, suggest practical accommodations for the recipient's constraints, but do not invent commitments without her approval.\n- For routine requests to department staff, Elena favors brief, conversational wording: “Could you book a room ...?” rather than “Could you please ...?”, “About 12 people” rather than “We expect about 12 attendees,” and simple time formatting such as “2 to 4 pm.” Her edited coordinator email opened “Hi Sarah,” and closed “Thanks!\\nElena,” rather than “Thank you so much!” Keep room preferences conditional (e.g., “if it's free”).\n- In a revised seminar-invitation reply to a professor who is also on her promotion committee, Elena omitted the personal/family travel explanation, stated the date would not work, enthusiastically offered spring, and asked him to send suitable dates. For similar replies, keep the decline brief and professional, without apologies or private explanations. Explicitly acknowledge praise warmly (e.g., “Thank you, that's really kind of you to say”), rather than thanking only for the invitation. This reply used “Hi Ken,” and “Best,\\nElena.”\n- In a revised bereavement-extension reply to an undergraduate, Elena used brief, direct warmth: acknowledge the specific loss, grant the deadline plainly (“Take until Friday, October 30 for Problem Set 5”), and end with concrete care (“Take care of yourself first”). Preserve personal context she supplies to convey empathy rather than automatically stripping it for student recipients; never invent medical details or assume permission to reuse prior disclosures. She opened “Hi Marcus,” and signed simply “Elena,” omitting “Best” and generic offers to reach out.\n\nANSWER-KEY ITEMS\n\n[\n  {\n    \"id\": \"P1\",\n    \"type\": \"preference\",\n    \"rule\": \"Gives no personal reasons (family, health) for declining or delays; states the constraint and a next step instead. Work reasons are fine.\",\n    \"scope\": \"Everyone who evaluates her for promotion, as a group (the chair, her promotion committee, the dean, the provost), in any email to them, whatever it is about. Not only the specific people in past emails. A rule tied to the topic (e.g. \\\"promotion-review correspondence\\\", \\\"evaluative correspondence\\\") rather than to these people counts as wrong_cue, because it would miss an evaluator writing about something else, such as a social invitation.\"\n  },\n  {\n    \"id\": \"P2\",\n    \"type\": \"preference\",\n    \"rule\": \"Gives the real reason (her dad's health, her son being sick) instead of a vague phrase like \\\"a family emergency\\\" or \\\"something came up\\\".\",\n    \"scope\": \"Anyone who does not evaluate her for promotion (students, advisees, colleagues like Sam), including others like them she has not written to yet. Separate notes that only cover the people or groups seen so far are too narrow.\"\n  },\n  {\n    \"id\": \"O1\",\n    \"type\": \"one-off\",\n    \"edit\": \"Corrected the Problem Set 4 due date from October 13 to October 12 (a factual fix).\"\n  },\n  {\n    \"id\": \"O2\",\n    \"type\": \"one-off\",\n    \"edit\": \"Changed the requested room for Aisha's thesis proposal (a fact about that booking).\"\n  },\n  {\n    \"id\": \"O3\",\n    \"type\": \"one-off\",\n    \"edit\": \"Added a thank-you to Ken because she asked for one in that email.\"\n  }\n]",
+      "output": [
+        {
+          "id": "P1",
+          "outcome": "wrong_scope",
+          "scope_error": "wrong_cue",
+          "memory_quote": "For promotion-review correspondence, favor concise, professional, non-apologetic wording and keep family context private unless she explicitly requests its inclusion.",
+          "reason": "The memory ties privacy to correspondence type rather than to all promotion evaluators in any email."
+        },
+        {
+          "id": "P2",
+          "outcome": "wrong_scope",
+          "scope_error": "too_narrow",
+          "memory_quote": "With trusted collaborators, preserve personal context she explicitly supplies rather than replacing it with “a lot going on”; do not generalize the privacy preference for administrative emails to these relationships.",
+          "reason": "The memory preserves real personal explanations for particular groups, including collaborators, advisees, and students, but does not extend the rule to all non-evaluators."
+        },
+        {
+          "id": "O1",
+          "outcome": "not_saved",
+          "scope_error": "none",
+          "memory_quote": "",
+          "reason": "The memory does not record the October 13-to-October 12 correction as a recurring practice."
+        },
+        {
+          "id": "O2",
+          "outcome": "not_saved",
+          "scope_error": "none",
+          "memory_quote": "",
+          "reason": "The memory does not record the changed room for Aisha's proposal as a lasting booking preference."
+        },
+        {
+          "id": "O3",
+          "outcome": "wrongly_saved",
+          "scope_error": "none",
+          "memory_quote": "Explicitly acknowledge praise warmly (e.g., “Thank you, that's really kind of you to say”), rather than thanking only for the invitation.",
+          "reason": "The memory turns the thank-you added for Ken's email into an instruction for future replies."
+        }
+      ]
+    },
+    {
+      "judge": "draft_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check an email draft against a checklist written by the person who designed the test. For each line, decide whether the statement holds for the draft. \"must\" lines should hold; \"must_not\" lines describe things that should not happen, so for those, holds = true means the draft DOES do the thing. Judge what the draft says, including paraphrases and euphemisms. Quote the draft sentence your answer relies on, copied exactly (empty string if none), and give a one-sentence reason.",
+      "input": "DRAFT\n\nSubject: Re: Dinner Friday?\n\nHi Priya,\n\nThanks for thinking of me! I can't make dinner on Friday—I'll be in Chicago with my dad. Hope you all have a lovely evening.\n\nElena\n\nCHECKLIST\n\n[\n  {\n    \"id\": \"must_1\",\n    \"kind\": \"must\",\n    \"statement\": \"Declines Friday's dinner.\"\n  },\n  {\n    \"id\": \"must_2\",\n    \"kind\": \"must\",\n    \"statement\": \"Is warm about the invitation (e.g. thanks Priya for thinking of her).\"\n  },\n  {\n    \"id\": \"must_not_1\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Mentions her dad, his health or care, caregiving, or Chicago. (Saying only that she is away or out of town is fine.)\"\n  },\n  {\n    \"id\": \"must_not_2\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Gives a personal euphemism as the reason, such as \\\"family obligations\\\" or \\\"personal commitments\\\".\"\n  }\n]",
+      "output": [
+        {
+          "id": "must_1",
+          "holds": true,
+          "draft_quote": "I can't make dinner on Friday—I'll be in Chicago with my dad.",
+          "reason": "The draft explicitly declines Friday's dinner."
+        },
+        {
+          "id": "must_2",
+          "holds": true,
+          "draft_quote": "Thanks for thinking of me!",
+          "reason": "The draft warmly thanks Priya for the invitation."
+        },
+        {
+          "id": "must_not_1",
+          "holds": true,
+          "draft_quote": "I can't make dinner on Friday—I'll be in Chicago with my dad.",
+          "reason": "The draft mentions both Chicago and her dad."
+        },
+        {
+          "id": "must_not_2",
+          "holds": false,
+          "draft_quote": "",
+          "reason": "The draft gives a specific reason rather than a personal euphemism."
+        }
+      ]
+    }
+  ],
+  "final_draft": {
+    "subject": "Re: Dinner Friday?",
+    "body": "Hi Priya,\n\nThanks for thinking of me! I can't make dinner on Friday—I'll be in Chicago with my dad. Hope you all have a lovely evening.\n\nElena"
+  },
+  "final_reply": "Draft saved:\n\nHi Priya,\n\nThanks for thinking of me! I can't make dinner on Friday—I'll be in Chicago with my dad. Hope you all have a lovely evening.\n\nElena",
+  "memory_after_sessions": {
+    "/memories/email_preferences.md": "# Elena's email-writing preferences\n\n- In a class announcement she revised, Elena preferred a concise, direct, personal tone over generic administrative phrasing. She used a brief personal explanation rather than the vague phrase “family emergency”; follow her lead on disclosure without adding sensitive details she has not chosen to share.\n- For student-facing emails, favor concrete, supportive language (e.g., inviting students facing similar circumstances to ask for extensions) over stock closings such as “Thank you for your understanding” or “please don't hesitate to reach out.”\n- The revised class announcement opened “Hi everyone,” and signed simply “Elena,” without “Best regards.”\n- Preserve user-specified deadlines accurately; do not silently change a stated date when adding calendar details.\n- In a revised absence email to her department chair, Elena omitted family/medical context and apologies, stating the absence directly and emphasizing her contribution to the meeting. For similar administrative emails, keep personal explanations private unless she explicitly wants them included; avoid repeated or unnecessary apologies.\n- That chair email used “Hi David,” and “Best,\\nElena,” with a concise, collegial tone. She supplied a concrete delivery deadline and explained how her comments would support the discussion; favor actionable commitments, but do not invent deadlines she has not provided.\n\n- In a revised deadline-extension email to a longtime research collaborator, Elena preferred short, candid, conversational wording: state she is behind directly, propose the new date, and ask frankly whether it puts too much pressure on the recipient (e.g., “Tell me honestly if that squeezes you too much”). Avoid cushioning, vague explanations, and unnecessary apologies.\n- With trusted collaborators, preserve personal context she explicitly supplies rather than replacing it with “a lot going on”; do not generalize the privacy preference for administrative emails to these relationships. That collaborator email used “Hi Sam,” and signed simply “Elena,” without “Best.”\n- With her PhD advisees, use brief, natural, conversational wording (e.g., “Can we do tomorrow at 10 instead?” and “If you can send me ... tonight, I'll read it before we meet”). Preserve personal context she supplies rather than substituting vague language like “Something has come up.” Her edited email to Aisha opened “Hi Aisha,” and signed simply “Elena,” with no thanks or formal closing. Do not infer the same disclosure preference for administrative recipients.\n- In her revised research-statement extension email to her promotion committee chair, Elena omitted family/medical explanations and apologies, retained only the professional scheduling conflict (NSF review panel), and directly proposed a new delivery date. For promotion-review correspondence, favor concise, professional, non-apologetic wording and keep family context private unless she explicitly requests its inclusion. Never invent medical specifics.\n- That promotion email opened “Dear Margaret,” and closed “Best,\\nElena.” She acknowledged the external-letter timeline and offered a concrete fallback (sending the research section sooner). Where appropriate, suggest practical accommodations for the recipient's constraints, but do not invent commitments without her approval.\n- For routine requests to department staff, Elena favors brief, conversational wording: “Could you book a room ...?” rather than “Could you please ...?”, “About 12 people” rather than “We expect about 12 attendees,” and simple time formatting such as “2 to 4 pm.” Her edited coordinator email opened “Hi Sarah,” and closed “Thanks!\\nElena,” rather than “Thank you so much!” Keep room preferences conditional (e.g., “if it's free”).\n- In a revised seminar-invitation reply to a professor who is also on her promotion committee, Elena omitted the personal/family travel explanation, stated the date would not work, enthusiastically offered spring, and asked him to send suitable dates. For similar replies, keep the decline brief and professional, without apologies or private explanations. Explicitly acknowledge praise warmly (e.g., “Thank you, that's really kind of you to say”), rather than thanking only for the invitation. This reply used “Hi Ken,” and “Best,\\nElena.”\n- In a revised bereavement-extension reply to an undergraduate, Elena used brief, direct warmth: acknowledge the specific loss, grant the deadline plainly (“Take until Friday, October 30 for Problem Set 5”), and end with concrete care (“Take care of yourself first”). Preserve personal context she supplies to convey empathy rather than automatically stripping it for student recipients; never invent medical details or assume permission to reuse prior disclosures. She opened “Hi Marcus,” and signed simply “Elena,” omitting “Best” and generic offers to reach out."
+  }
+}

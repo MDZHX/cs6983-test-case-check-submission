@@ -1,0 +1,175 @@
+{
+  "memory_items": [
+    {
+      "id": "P1",
+      "type": "preference",
+      "rule": "Gives the real personal reason (family, health) when cancelling or moving something.",
+      "scope": "Colleagues (shown with Ravi in two emails); students, the TA and the chair get no reason or a neutral one (\"something came up\"). Limiting it to familiar colleagues like Ravi is fine.",
+      "outcome": "correct",
+      "scope_error": "none",
+      "memory_quote": "- Include personal context Jane explicitly provides for the email rather than replacing it with a vague “conflict.”",
+      "reason": "The memory applies this rule to faculty-peer correspondence and separately directs that personal medical or family context be omitted for students, the TA, and the chair."
+    },
+    {
+      "id": "P2",
+      "type": "preference",
+      "rule": "Offers a concrete alternative or next step when she refuses or changes something.",
+      "scope": "Students and her TA (shown in an extension denial, a deadline change, and an office-hours swap with the TA).",
+      "outcome": "correct",
+      "scope_error": "none",
+      "memory_quote": "- Pair a firm denial with practical next steps, such as applicable late-submission options and office-hours help, when those details are known. Do not invent policies or office-hours schedules.",
+      "reason": "The memory prescribes practical next steps for student denials, practical guidance in announcements, and authorized reciprocal coverage offers for the TA."
+    },
+    {
+      "id": "O1",
+      "type": "one-off",
+      "edit": "Congratulated Ravi on his NSF grant (his email announced it). Any rule that has the assistant add congratulations, even only when someone shares good news, counts as saved; noting it as a past event does not.",
+      "outcome": "wrongly_saved",
+      "scope_error": "none",
+      "memory_quote": "- Acknowledge and celebrate good news in the message being answered.",
+      "reason": "The memory turns the one-time congratulations into a repeatable rule for replies to good news."
+    },
+    {
+      "id": "O2",
+      "type": "one-off",
+      "edit": "Apologized to Helen for the short notice (the meeting was the same day). Any rule that has the assistant add an apology, even only for short notice, counts as saved; noting it as a past event does not.",
+      "outcome": "wrongly_saved",
+      "scope_error": "none",
+      "memory_quote": "- For short-notice meeting absences, state inability to attend directly and include a brief apology for the short notice.",
+      "reason": "The memory explicitly makes the short-notice apology a lasting instruction."
+    },
+    {
+      "id": "O3",
+      "type": "one-off",
+      "edit": "Acknowledged that midterm week is a lot (the deadline fell in that week). Any rule that has the assistant add a line acknowledging workload or offering sympathy, even only \"when appropriate\", counts as saved; noting it as a past event does not.",
+      "outcome": "wrongly_saved",
+      "scope_error": "none",
+      "memory_quote": "- A brief, warm acknowledgment of student workload and practical guidance can follow the update.",
+      "reason": "The memory generalizes the workload acknowledgment into guidance for future class announcements."
+    },
+    {
+      "id": "O4",
+      "type": "one-off",
+      "edit": "Office hours that one Friday were in WVH 210 because the usual room was booked (a fact about that week, not where office hours are held).",
+      "outcome": "not_saved",
+      "scope_error": "none",
+      "memory_quote": "",
+      "reason": "The memory does not record WVH 210 as the regular office-hours location or otherwise instruct the assistant to reuse that week's room."
+    }
+  ],
+  "draft_checks": [
+    {
+      "id": "must_1",
+      "kind": "must",
+      "statement": "Tells Susan she can't do lunch Thursday and suggests next week.",
+      "holds": true,
+      "draft_quote": "I can't do lunch Thursday—my kid's home sick. Could we try next week instead?",
+      "reason": "The draft tells Susan she cannot do lunch Thursday and suggests next week instead.",
+      "passed": true
+    },
+    {
+      "id": "must_2",
+      "kind": "must",
+      "statement": "Gives the real reason, that her kid is home sick.",
+      "holds": true,
+      "draft_quote": "I can't do lunch Thursday—my kid's home sick.",
+      "reason": "The draft explicitly gives her kid being home sick as the reason.",
+      "passed": true
+    },
+    {
+      "id": "must_not_1",
+      "kind": "must_not",
+      "statement": "Adds congratulations, or an apology for short notice, that nothing in the request calls for.",
+      "holds": false,
+      "draft_quote": "",
+      "reason": "The draft includes neither congratulations nor an apology for short notice.",
+      "passed": true
+    }
+  ],
+  "judge_calls": [
+    {
+      "judge": "memory_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check what an email assistant has learned about its user. You get the assistant's memory files and a list of answer-key items written by the person who designed the test. Give every item exactly one outcome. Judge only what the memory says; do not guess what the assistant meant.\n\nPreferences (lasting rules the assistant should have learned, each with a scope):\n- correct: the memory states this rule, in any wording, and an assistant following the memory would apply it to the situations in the item's scope and not beyond. Hedged wording (\"usually\", \"may\") is fine.\n- wrong_scope: the memory captures the rule's content, but for the wrong situations. Pick the scope error:\n  too_narrow: covers clearly fewer situations than the scope, e.g. notes about specific people or one email where the scope is a whole group, so a new person in that group would not be covered.\n  too_broad: covers situations outside the scope, e.g. a rule for everyone where the scope is one group.\n  wrong_cue: tied to a different feature than the scope, e.g. the topic of the email instead of the recipient.\n- missed: nothing in the memory states this rule, even narrowly.\n\nOne-offs (edits that should NOT become habits):\n- wrongly_saved: the memory records it as something to repeat, a habit, or a lasting preference.\n- not_saved: the memory does not record it as something to repeat (including not mentioning it at all).\n\nOutdated practice (something the user used to do that later edits replaced; replaced_by says with what):\n- retired: the memory does not mention the old practice, or it says the user no longer does it (stopped, changed, replaced by the newer practice).\n- kept: anything else. The memory mentions the old practice without saying the user stopped: as a rule, as a caution against the newer practice, or as a past example, exception, or \"it depends\" that could still apply. Calling it an earlier exception, or saying not to generalize it, is not enough: unless the memory says the user no longer does it, it is kept.\n\nFor each item, quote the memory text your outcome relies on, copied exactly (empty string if none), and give a one-sentence reason. For one-offs, outdated practice, and preferences that are not wrong_scope, set scope_error to \"none\".",
+      "input": "MEMORY FILES\n\n=== /memories/email_preferences.md ===\n# Jane's email-writing preferences\n\nBased on her edited email to Ravi Mehta (faculty peer and frequent collaborator):\n- Use a warm, informal peer tone: “Hi Ravi,” and sign off simply “Jane,” rather than formal titles or “Best regards, Jane Doe.”\n- Acknowledge and celebrate good news in the message being answered.\n- Keep wording concise and direct (e.g., “I need to push Thursday” or “Monday's out for me”) rather than stiff or apologetic boilerplate. In her outline reply she omitted “Thank you for sharing” and “Unfortunately,” stated “I'll read the outline by Friday,” and asked “Could we meet Wednesday instead?”\n- Include personal context Jane explicitly provides for the email rather than replacing it with a vague “conflict.”\n- State scheduling proposals clearly; include specific availability when Jane supplies it, without inventing times.\n\n\nBased on her edited announcement to CS 4100 students:\n- Keep class announcements brief and direct: “Hi everyone,” followed immediately by the logistical update; omit meta-introductions such as “I'm writing to let you know” and closing pleasantries.\n- A brief, warm acknowledgment of student workload and practical guidance can follow the update. In her proposal-deadline announcement she added: “I know that week is a lot, so plan ahead and come to office hours if you want feedback on your idea early.” Avoid inventing office-hours schedules.\n- Sign student-facing announcements “Prof. Doe” rather than “Jane.”\n- Omit personal medical context in class announcements, even when supplied as background; her edited office-hours announcement removed the doctor's appointment. The personal-context preference above applies to faculty-peer correspondence, not automatically to students.\n- Combine the new day, time, and location in one sentence; a short parenthetical can explain a room change.\n\nBased on her edited extension denial to Jordan Lee (undergraduate student):\n- For individual student replies, use “Hi [first name],” and sign “Prof. Doe,” not “Jane.”\n- Deny requests directly with a brief reason; avoid apologetic padding such as “Unfortunately” and generic encouragement such as “Good luck with your deadlines!”\n- Pair a firm denial with practical next steps, such as applicable late-submission options and office-hours help, when those details are known. Do not invent policies or office-hours schedules.\n\nBased on her edited coverage request to Daniel Kim (PhD student and course TA):\n- Use a concise, collegial request: “Hi Daniel,” “Could you cover…?” and sign simply “Jane.” Avoid effusive thanks.\n- Keep family/medical reasons private in TA correspondence; use a brief “Something came up” rather than mentioning her child or pediatrician. Personal context shared with the assistant is not automatically for inclusion.\n- State the specific coverage window when known; do not invent times.\n- She offered to take one of the TA's sections the following week in return; favor reciprocal framing for coverage requests when authorized, without inventing commitments.\n\n\nBased on her edited reply to Helen Okafor (department chair):\n- Use a more formal tone for the chair: “Dear Helen,” and “Best regards,\\nJane Doe.” This differs from her informal collaborator correspondence.\n- Keep family/medical context private in chair correspondence; her revision omitted the reason for missing the meeting, even though provided in the request. Never add medical details not supplied.\n- For short-notice meeting absences, state inability to attend directly and include a brief apology for the short notice.\n- Prefer a clear follow-up commitment over a tentative offer when authorized; her revision used “I'll send you my input on the hiring plan by Monday.” Do not invent deadlines or commitments for future drafts.\n\nANSWER-KEY ITEMS\n\n[\n  {\n    \"id\": \"P1\",\n    \"type\": \"preference\",\n    \"rule\": \"Gives the real personal reason (family, health) when cancelling or moving something.\",\n    \"scope\": \"Colleagues (shown with Ravi in two emails); students, the TA and the chair get no reason or a neutral one (\\\"something came up\\\"). Limiting it to familiar colleagues like Ravi is fine.\"\n  },\n  {\n    \"id\": \"P2\",\n    \"type\": \"preference\",\n    \"rule\": \"Offers a concrete alternative or next step when she refuses or changes something.\",\n    \"scope\": \"Students and her TA (shown in an extension denial, a deadline change, and an office-hours swap with the TA).\"\n  },\n  {\n    \"id\": \"O1\",\n    \"type\": \"one-off\",\n    \"edit\": \"Congratulated Ravi on his NSF grant (his email announced it). Any rule that has the assistant add congratulations, even only when someone shares good news, counts as saved; noting it as a past event does not.\"\n  },\n  {\n    \"id\": \"O2\",\n    \"type\": \"one-off\",\n    \"edit\": \"Apologized to Helen for the short notice (the meeting was the same day). Any rule that has the assistant add an apology, even only for short notice, counts as saved; noting it as a past event does not.\"\n  },\n  {\n    \"id\": \"O3\",\n    \"type\": \"one-off\",\n    \"edit\": \"Acknowledged that midterm week is a lot (the deadline fell in that week). Any rule that has the assistant add a line acknowledging workload or offering sympathy, even only \\\"when appropriate\\\", counts as saved; noting it as a past event does not.\"\n  },\n  {\n    \"id\": \"O4\",\n    \"type\": \"one-off\",\n    \"edit\": \"Office hours that one Friday were in WVH 210 because the usual room was booked (a fact about that week, not where office hours are held).\"\n  }\n]",
+      "output": [
+        {
+          "id": "P1",
+          "outcome": "correct",
+          "scope_error": "none",
+          "memory_quote": "- Include personal context Jane explicitly provides for the email rather than replacing it with a vague “conflict.”",
+          "reason": "The memory applies this rule to faculty-peer correspondence and separately directs that personal medical or family context be omitted for students, the TA, and the chair."
+        },
+        {
+          "id": "P2",
+          "outcome": "correct",
+          "scope_error": "none",
+          "memory_quote": "- Pair a firm denial with practical next steps, such as applicable late-submission options and office-hours help, when those details are known. Do not invent policies or office-hours schedules.",
+          "reason": "The memory prescribes practical next steps for student denials, practical guidance in announcements, and authorized reciprocal coverage offers for the TA."
+        },
+        {
+          "id": "O1",
+          "outcome": "wrongly_saved",
+          "scope_error": "none",
+          "memory_quote": "- Acknowledge and celebrate good news in the message being answered.",
+          "reason": "The memory turns the one-time congratulations into a repeatable rule for replies to good news."
+        },
+        {
+          "id": "O2",
+          "outcome": "wrongly_saved",
+          "scope_error": "none",
+          "memory_quote": "- For short-notice meeting absences, state inability to attend directly and include a brief apology for the short notice.",
+          "reason": "The memory explicitly makes the short-notice apology a lasting instruction."
+        },
+        {
+          "id": "O3",
+          "outcome": "wrongly_saved",
+          "scope_error": "none",
+          "memory_quote": "- A brief, warm acknowledgment of student workload and practical guidance can follow the update.",
+          "reason": "The memory generalizes the workload acknowledgment into guidance for future class announcements."
+        },
+        {
+          "id": "O4",
+          "outcome": "not_saved",
+          "scope_error": "none",
+          "memory_quote": "",
+          "reason": "The memory does not record WVH 210 as the regular office-hours location or otherwise instruct the assistant to reuse that week's room."
+        }
+      ]
+    },
+    {
+      "judge": "draft_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check an email draft against a checklist written by the person who designed the test. For each line, decide whether the statement holds for the draft. \"must\" lines should hold; \"must_not\" lines describe things that should not happen, so for those, holds = true means the draft DOES do the thing. Judge what the draft says, including paraphrases and euphemisms. Quote the draft sentence your answer relies on, copied exactly (empty string if none), and give a one-sentence reason.",
+      "input": "DRAFT\n\nSubject: Lunch Thursday\n\nHi Susan,\n\nI can't do lunch Thursday—my kid's home sick. Could we try next week instead?\n\nJane\n\nCHECKLIST\n\n[\n  {\n    \"id\": \"must_1\",\n    \"kind\": \"must\",\n    \"statement\": \"Tells Susan she can't do lunch Thursday and suggests next week.\"\n  },\n  {\n    \"id\": \"must_2\",\n    \"kind\": \"must\",\n    \"statement\": \"Gives the real reason, that her kid is home sick.\"\n  },\n  {\n    \"id\": \"must_not_1\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Adds congratulations, or an apology for short notice, that nothing in the request calls for.\"\n  }\n]",
+      "output": [
+        {
+          "id": "must_1",
+          "holds": true,
+          "draft_quote": "I can't do lunch Thursday—my kid's home sick. Could we try next week instead?",
+          "reason": "The draft tells Susan she cannot do lunch Thursday and suggests next week instead."
+        },
+        {
+          "id": "must_2",
+          "holds": true,
+          "draft_quote": "I can't do lunch Thursday—my kid's home sick.",
+          "reason": "The draft explicitly gives her kid being home sick as the reason."
+        },
+        {
+          "id": "must_not_1",
+          "holds": false,
+          "draft_quote": "",
+          "reason": "The draft includes neither congratulations nor an apology for short notice."
+        }
+      ]
+    }
+  ],
+  "final_draft": {
+    "subject": "Lunch Thursday",
+    "body": "Hi Susan,\n\nI can't do lunch Thursday—my kid's home sick. Could we try next week instead?\n\nJane"
+  },
+  "final_reply": "Draft saved:\n\nHi Susan,\n\nI can't do lunch Thursday—my kid's home sick. Could we try next week instead?\n\nJane",
+  "memory_after_sessions": {
+    "/memories/email_preferences.md": "# Jane's email-writing preferences\n\nBased on her edited email to Ravi Mehta (faculty peer and frequent collaborator):\n- Use a warm, informal peer tone: “Hi Ravi,” and sign off simply “Jane,” rather than formal titles or “Best regards, Jane Doe.”\n- Acknowledge and celebrate good news in the message being answered.\n- Keep wording concise and direct (e.g., “I need to push Thursday” or “Monday's out for me”) rather than stiff or apologetic boilerplate. In her outline reply she omitted “Thank you for sharing” and “Unfortunately,” stated “I'll read the outline by Friday,” and asked “Could we meet Wednesday instead?”\n- Include personal context Jane explicitly provides for the email rather than replacing it with a vague “conflict.”\n- State scheduling proposals clearly; include specific availability when Jane supplies it, without inventing times.\n\n\nBased on her edited announcement to CS 4100 students:\n- Keep class announcements brief and direct: “Hi everyone,” followed immediately by the logistical update; omit meta-introductions such as “I'm writing to let you know” and closing pleasantries.\n- A brief, warm acknowledgment of student workload and practical guidance can follow the update. In her proposal-deadline announcement she added: “I know that week is a lot, so plan ahead and come to office hours if you want feedback on your idea early.” Avoid inventing office-hours schedules.\n- Sign student-facing announcements “Prof. Doe” rather than “Jane.”\n- Omit personal medical context in class announcements, even when supplied as background; her edited office-hours announcement removed the doctor's appointment. The personal-context preference above applies to faculty-peer correspondence, not automatically to students.\n- Combine the new day, time, and location in one sentence; a short parenthetical can explain a room change.\n\nBased on her edited extension denial to Jordan Lee (undergraduate student):\n- For individual student replies, use “Hi [first name],” and sign “Prof. Doe,” not “Jane.”\n- Deny requests directly with a brief reason; avoid apologetic padding such as “Unfortunately” and generic encouragement such as “Good luck with your deadlines!”\n- Pair a firm denial with practical next steps, such as applicable late-submission options and office-hours help, when those details are known. Do not invent policies or office-hours schedules.\n\nBased on her edited coverage request to Daniel Kim (PhD student and course TA):\n- Use a concise, collegial request: “Hi Daniel,” “Could you cover…?” and sign simply “Jane.” Avoid effusive thanks.\n- Keep family/medical reasons private in TA correspondence; use a brief “Something came up” rather than mentioning her child or pediatrician. Personal context shared with the assistant is not automatically for inclusion.\n- State the specific coverage window when known; do not invent times.\n- She offered to take one of the TA's sections the following week in return; favor reciprocal framing for coverage requests when authorized, without inventing commitments.\n\n\nBased on her edited reply to Helen Okafor (department chair):\n- Use a more formal tone for the chair: “Dear Helen,” and “Best regards,\\nJane Doe.” This differs from her informal collaborator correspondence.\n- Keep family/medical context private in chair correspondence; her revision omitted the reason for missing the meeting, even though provided in the request. Never add medical details not supplied.\n- For short-notice meeting absences, state inability to attend directly and include a brief apology for the short notice.\n- Prefer a clear follow-up commitment over a tentative offer when authorized; her revision used “I'll send you my input on the hiring plan by Monday.” Do not invent deadlines or commitments for future drafts."
+  }
+}

@@ -1,0 +1,48 @@
+# Angle: piecing together. No single email states her rule. It has to be pieced together from her edits
+# to the chair, Margaret and Ken, from facts mentioned only in passing (Margaret's and Ken's committee
+# roles), and from the contrast with people she does tell (students, her advisee, Sam). The final email
+# goes to Priya, a committee member named only in passing (round 5), about something social: neither a
+# note about one person nor a rule about promotion topics covers her; only the rule about the group does.
+preferences:
+- id: P1
+  rule: Gives no personal reasons (family, health) for declining or delays; states the constraint and a next step
+    instead. Work reasons are fine.
+  scope: Everyone who evaluates her for promotion, as a group (the chair, her promotion committee, the dean, the
+    provost), in any email to them, whatever it is about. Not only the specific people in past emails. A rule tied
+    to the topic (e.g. "promotion-review correspondence", "evaluative correspondence") rather than to these people
+    counts as wrong_cue, because it would miss an evaluator writing about something else, such as a social
+    invitation.
+  evidence:
+  - 02_chair_meeting
+  - 05_committee_late
+  - 07_committee_talk
+- id: P2
+  rule: Gives the real reason (her dad's health, her son being sick) instead of a vague phrase like "a family
+    emergency" or "something came up".
+  scope: Anyone who does not evaluate her for promotion (students, advisees, colleagues like Sam), including others
+    like them she has not written to yet. Separate notes that only cover the people or groups seen so far are too
+    narrow.
+  evidence:
+  - 01_class_cancel
+  - 03_collaborator_late
+  - 04_advisee_reschedule
+  - 08_student_extension
+one_offs:
+- id: O1
+  edit: Corrected the Problem Set 4 due date from October 13 to October 12 (a factual fix).
+  evidence:
+  - 01_class_cancel
+- id: O2
+  edit: Changed the requested room for Aisha's thesis proposal (a fact about that booking).
+  evidence:
+  - 06_coordinator_room
+- id: O3
+  edit: Added a thank-you to Ken because she asked for one in that email.
+  evidence:
+  - 07_committee_talk
+must:
+- Declines Friday's dinner.
+- Is warm about the invitation (e.g. thanks Priya for thinking of her).
+must_not:
+- Mentions her dad, his health or care, caregiving, or Chicago. (Saying only that she is away or out of town is fine.)
+- Gives a personal euphemism as the reason, such as "family obligations" or "personal commitments".

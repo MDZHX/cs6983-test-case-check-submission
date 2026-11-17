@@ -1,0 +1,7 @@
+.env
+.venv/
+runs/
+docs/
+**/__pycache__/
+**/.DS_Store
+.git/

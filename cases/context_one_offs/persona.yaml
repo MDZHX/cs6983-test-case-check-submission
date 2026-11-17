@@ -1,0 +1,25 @@
+name: Prof. Jane Doe
+first_name: Jane
+email: jane.doe@univ.edu
+description: >-
+  Jane is an Associate Professor of Computer Science. She is teaching CS 4100 (Artificial Intelligence)
+  in Fall 2026, with a PhD student as her TA, and collaborates with colleagues in the department.
+contacts:
+- email: cs4100-students@univ.edu
+  name: CS 4100 students (mailing list)
+  role: students in Jane's class
+- email: jordan.lee@univ.edu
+  name: Jordan Lee
+  role: undergraduate student in CS 4100
+- email: daniel.kim@univ.edu
+  name: Daniel Kim
+  role: PhD student; TA for CS 4100
+- email: ravi.mehta@univ.edu
+  name: Prof. Ravi Mehta
+  role: faculty (peer, frequent collaborator)
+- email: susan.albright@univ.edu
+  name: Prof. Susan Albright
+  role: faculty (peer)
+- email: helen.okafor@univ.edu
+  name: Prof. Helen Okafor
+  role: Department Chair

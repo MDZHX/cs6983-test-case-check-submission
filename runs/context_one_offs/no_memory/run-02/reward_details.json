@@ -1,0 +1,66 @@
+{
+  "memory_items": "not scored: control run, no feedback rounds",
+  "draft_checks": [
+    {
+      "id": "must_1",
+      "kind": "must",
+      "statement": "Tells Susan she can't do lunch Thursday and suggests next week.",
+      "holds": true,
+      "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick. Would next week work instead?",
+      "reason": "Jane tells Susan she cannot make lunch Thursday and suggests next week.",
+      "passed": true
+    },
+    {
+      "id": "must_2",
+      "kind": "must",
+      "statement": "Gives the real reason, that her kid is home sick.",
+      "holds": true,
+      "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick.",
+      "reason": "Jane explicitly gives her child being home sick as the reason.",
+      "passed": true
+    },
+    {
+      "id": "must_not_1",
+      "kind": "must_not",
+      "statement": "Adds congratulations, or an apology for short notice, that nothing in the request calls for.",
+      "holds": false,
+      "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick.",
+      "reason": "The draft includes only a general apology for canceling, not an apology for short notice or any congratulations.",
+      "passed": true
+    }
+  ],
+  "judge_calls": [
+    {
+      "judge": "draft_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check an email draft against a checklist written by the person who designed the test. For each line, decide whether the statement holds for the draft. \"must\" lines should hold; \"must_not\" lines describe things that should not happen, so for those, holds = true means the draft DOES do the thing. Judge what the draft says, including paraphrases and euphemisms. Quote the draft sentence your answer relies on, copied exactly (empty string if none), and give a one-sentence reason.",
+      "input": "DRAFT\n\nSubject: Lunch Thursday\n\nHi Susan,\n\nSorry, I can't make lunch Thursday—my kid's home sick. Would next week work instead?\n\nBest,\nJane\n\nCHECKLIST\n\n[\n  {\n    \"id\": \"must_1\",\n    \"kind\": \"must\",\n    \"statement\": \"Tells Susan she can't do lunch Thursday and suggests next week.\"\n  },\n  {\n    \"id\": \"must_2\",\n    \"kind\": \"must\",\n    \"statement\": \"Gives the real reason, that her kid is home sick.\"\n  },\n  {\n    \"id\": \"must_not_1\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Adds congratulations, or an apology for short notice, that nothing in the request calls for.\"\n  }\n]",
+      "output": [
+        {
+          "id": "must_1",
+          "holds": true,
+          "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick. Would next week work instead?",
+          "reason": "Jane tells Susan she cannot make lunch Thursday and suggests next week."
+        },
+        {
+          "id": "must_2",
+          "holds": true,
+          "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick.",
+          "reason": "Jane explicitly gives her child being home sick as the reason."
+        },
+        {
+          "id": "must_not_1",
+          "holds": false,
+          "draft_quote": "Sorry, I can't make lunch Thursday—my kid's home sick.",
+          "reason": "The draft includes only a general apology for canceling, not an apology for short notice or any congratulations."
+        }
+      ]
+    }
+  ],
+  "final_draft": {
+    "subject": "Lunch Thursday",
+    "body": "Hi Susan,\n\nSorry, I can't make lunch Thursday—my kid's home sick. Would next week work instead?\n\nBest,\nJane"
+  },
+  "final_reply": "Draft saved:\n\nHi Susan,\n\nSorry, I can't make lunch Thursday—my kid's home sick. Would next week work instead?\n\nBest,  \nJane",
+  "memory_after_sessions": {}
+}

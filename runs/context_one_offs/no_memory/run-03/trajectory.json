@@ -1,0 +1,82 @@
+{
+  "case": "context_one_offs",
+  "condition": "none",
+  "mode": "simulated_user",
+  "steps": [
+    {
+      "timestamp": "2026-11-16T18:17:01.442Z",
+      "session": null,
+      "type": "memory_snapshot",
+      "files": {}
+    },
+    {
+      "timestamp": "2026-11-16T18:17:01.442Z",
+      "session": "final",
+      "type": "session_start",
+      "kind": "final_task",
+      "scenario_date": "2026-10-05"
+    },
+    {
+      "timestamp": "2026-11-16T18:17:01.442Z",
+      "session": "final",
+      "type": "message",
+      "role": "user",
+      "text": "Tell Susan I can't do lunch Thursday, my kid's home sick. Maybe next week?\n\nTo: Prof. Susan Albright <susan.albright@univ.edu> (faculty (peer))"
+    },
+    {
+      "timestamp": "2026-11-16T18:17:03.028Z",
+      "session": "final",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_M2BTGGltohOQrd879dFEHOyd",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:17:03.028Z",
+      "session": "final",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_M2BTGGltohOQrd879dFEHOyd",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.0K\t/memories"
+    },
+    {
+      "timestamp": "2026-11-16T18:17:04.606Z",
+      "session": "final",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "save_draft",
+      "tool_call_id": "call_AeD6AoqXJO0AlQDDwjlp9zKD",
+      "arguments": {
+        "subject": "Lunch Thursday",
+        "body": "Hi Susan,\n\nSorry, I can't make lunch Thursday—my kid's home sick. Maybe next week?\n\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:17:04.606Z",
+      "session": "final",
+      "type": "tool_result",
+      "tool": "save_draft",
+      "tool_call_id": "call_AeD6AoqXJO0AlQDDwjlp9zKD",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:17:06.237Z",
+      "session": "final",
+      "type": "message",
+      "role": "assistant",
+      "text": "Draft saved:\n\nHi Susan,\n\nSorry, I can't make lunch Thursday—my kid's home sick. Maybe next week?\n\nJane"
+    }
+  ]
+}

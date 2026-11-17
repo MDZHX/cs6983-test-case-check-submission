@@ -1,0 +1,1286 @@
+{
+  "case": "context_one_offs",
+  "condition": "full",
+  "mode": "simulated_user",
+  "steps": [
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": null,
+      "type": "memory_snapshot",
+      "files": {}
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-14"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "message",
+      "role": "user",
+      "text": "Tell Ravi I need to push Thursday's meeting. My mom is having surgery and I'm flying to Chicago Wednesday night. Next Tuesday?\n\nTo: Prof. Ravi Mehta <ravi.mehta@univ.edu> (faculty (peer, frequent collaborator))\n\nReplying to:\nFrom: Prof. Ravi Mehta <ravi.mehta@univ.edu> (faculty (peer, frequent collaborator))\nSubject: Thursday + news\n\nHi Jane,\n\nStill on for Thursday at 2 to go over the paper outline? Also, some good news: the NSF grant came through!\n\nRavi"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.0K\t/memories"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Re: Thursday + news",
+        "body": "Dear Prof. Mehta,\n\nI'm afraid I need to reschedule our Thursday meeting due to a conflict. Would next Tuesday work for you instead?\n\nBest regards,\nJane Doe"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:11.280Z",
+      "session": "01_peer_reschedule",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi Ravi,\n\nCongratulations on the NSF grant! That's fantastic news.\n\nI need to push Thursday. My mom is having surgery and I'm flying to Chicago Wednesday night. Could we do next Tuesday, any time after 2?\n\nJane\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:13.443Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_J95DsurPrlFl9sCxGx0dALyX",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:13.444Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_J95DsurPrlFl9sCxGx0dALyX",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.0K\t/memories"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:19.308Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_ULVmLaolz69Ynm7wF4LbSMSN",
+      "arguments": {
+        "command": "create",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- Preserve personal context Jane explicitly supplies for the email rather than replacing it with a generic \"conflict.\"\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n",
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:19.309Z",
+      "session": "01_peer_reschedule",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_ULVmLaolz69Ynm7wF4LbSMSN",
+      "output": "File created successfully at: /memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.764Z",
+      "session": "01_peer_reschedule",
+      "type": "message",
+      "role": "assistant",
+      "text": "Got it—I’ll keep future drafts to close colleagues warm and direct, acknowledge their news, and preserve the personal context you provide."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "01_peer_reschedule",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- Preserve personal context Jane explicitly supplies for the email rather than replacing it with a generic \"conflict.\"\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-15"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "message",
+      "role": "user",
+      "text": "Tell the class I'm moving Thursday's office hours, I have a doctor's appointment. Friday 2 to 3 works. Our usual room is booked Friday, so it'll be in WVH 210.\n\nTo: CS 4100 students (mailing list) <cs4100-students@univ.edu> (students in Jane's class)"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.6K\t/memories\n0.6K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Office hours moved this week",
+        "body": "Hi everyone,\n\nBecause of a doctor's appointment, I need to move this Thursday's office hours. I'll hold them on Friday from 2 to 3 pm instead, in WVH 210, since our usual room is booked.\n\nBest,\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:21.765Z",
+      "session": "02_class_office_hours",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi everyone,\n\nThis week's office hours are moving from Thursday to Friday, 2 to 3 pm, in WVH 210 (our usual room is booked that day).\n\nProf. Doe\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:23.426Z",
+      "session": "02_class_office_hours",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_cdXt5GfjgK6XC0bOrzef5jFv",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:23.426Z",
+      "session": "02_class_office_hours",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_cdXt5GfjgK6XC0bOrzef5jFv",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.6K\t/memories\n0.6K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:25.139Z",
+      "session": "02_class_office_hours",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_lldveMRbS0F84om77rU9BOAa",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:25.140Z",
+      "session": "02_class_office_hours",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_lldveMRbS0F84om77rU9BOAa",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- Preserve personal context Jane explicitly supplies for the email rather than replacing it with a generic \"conflict.\"\n     6\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     7\t"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:29.446Z",
+      "session": "02_class_office_hours",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_FIw9SaypiCRi5UzfXVdUJW6g",
+      "arguments": {
+        "command": "str_replace",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": "- Preserve personal context Jane explicitly supplies for the email rather than replacing it with a generic \"conflict.\"",
+        "new_str": "- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".",
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:29.446Z",
+      "session": "02_class_office_hours",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_FIw9SaypiCRi5UzfXVdUJW6g",
+      "output": "The memory file has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.918Z",
+      "session": "02_class_office_hours",
+      "type": "message",
+      "role": "assistant",
+      "text": "Noted—future class announcements will be brief, omit personal reasons, and use “Prof. Doe” as the sign-off."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.918Z",
+      "session": "02_class_office_hours",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-17"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "message",
+      "role": "user",
+      "text": "Jordan asked for an extension on Assignment 2 because he has other deadlines. Say no.\n\nTo: Jordan Lee <jordan.lee@univ.edu> (undergraduate student in CS 4100)\n\nReplying to:\nFrom: Jordan Lee <jordan.lee@univ.edu> (undergraduate student in CS 4100)\nSubject: Extension on Assignment 2?\n\nHi Professor Doe,\n\nCould I get an extension on Assignment 2? I have two other deadlines this week.\n\nThanks,\nJordan"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.8K\t/memories\n0.8K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Re: Extension on Assignment 2?",
+        "body": "Hi Jordan,\n\nUnfortunately, I can't grant an extension on Assignment 2. Good luck with your deadlines!\n\nBest,\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:31.919Z",
+      "session": "03_student_extension",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi Jordan,\n\nI can't grant an extension on Assignment 2, since other deadlines aren't grounds for one. You can still turn it in up to 24 hours late for a 10% penalty, and if you're stuck, come to office hours on Friday.\n\nProf. Doe\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:38.014Z",
+      "session": "03_student_extension",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_8lPodE0EIrpxAoSVmKV1Ki20",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:38.014Z",
+      "session": "03_student_extension",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_8lPodE0EIrpxAoSVmKV1Ki20",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n0.8K\t/memories\n0.8K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:43.094Z",
+      "session": "03_student_extension",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_uYH6u8mLmBYU3OJ0r56DIshl",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:43.094Z",
+      "session": "03_student_extension",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_uYH6u8mLmBYU3OJ0r56DIshl",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:50.639Z",
+      "session": "03_student_extension",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_hQRjIxOpDgtdOPKUvKp4OO6W",
+      "arguments": {
+        "command": "insert",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": 7,
+        "insert_text": "- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.",
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:50.640Z",
+      "session": "03_student_extension",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_hQRjIxOpDgtdOPKUvKp4OO6W",
+      "output": "The file /memories/email_preferences.md has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.883Z",
+      "session": "03_student_extension",
+      "type": "message",
+      "role": "assistant",
+      "text": "Noted—I’ll keep student replies direct, explain the reason for a denial, include known alternatives or support, and sign “Prof. Doe” without an extra closing."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.883Z",
+      "session": "03_student_extension",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.883Z",
+      "session": "04_ta_cover",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-22"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "message",
+      "role": "user",
+      "text": "Ask Daniel to cover my Wednesday office hours, I have to take my son to the pediatrician.\n\nTo: Daniel Kim <daniel.kim@univ.edu> (PhD student; TA for CS 4100)"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n1.4K\t/memories\n1.4K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Covering Wednesday office hours",
+        "body": "Hi Daniel,\n\nWould you be able to cover my office hours this Wednesday? I need to take my son to the pediatrician.\n\nThank you so much!\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:12:55.884Z",
+      "session": "04_ta_cover",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi Daniel,\n\nCould you cover my office hours this Wednesday, 3 to 4 pm? Something came up. I'm happy to take one of your sections next week in return.\n\nJane\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:12:58.233Z",
+      "session": "04_ta_cover",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_J58Alg9lKxmiIswiKaCb6S2Q",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:12:58.233Z",
+      "session": "04_ta_cover",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_J58Alg9lKxmiIswiKaCb6S2Q",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n1.4K\t/memories\n1.4K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:00.366Z",
+      "session": "04_ta_cover",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_6yO5BnKFMIBJq5bTI4jOfpGH",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:00.366Z",
+      "session": "04_ta_cover",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_6yO5BnKFMIBJq5bTI4jOfpGH",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n     9\t"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:04.673Z",
+      "session": "04_ta_cover",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_dGGn5akaw6cAuXtbw97Zw3oM",
+      "arguments": {
+        "command": "insert",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": 9,
+        "insert_text": "- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.",
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:04.673Z",
+      "session": "04_ta_cover",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_dGGn5akaw6cAuXtbw97Zw3oM",
+      "output": "The file /memories/email_preferences.md has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "04_ta_cover",
+      "type": "message",
+      "role": "assistant",
+      "text": "Noted—I'll keep personal details private, use a direct, collegial tone, and include known times. I’ll offer a swap only when you authorize it."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "04_ta_cover",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n\n- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments."
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-24"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "message",
+      "role": "user",
+      "text": "Tell Helen I can't make today's faculty meeting, I'm still helping my mom recover. I can send her my thoughts on the hiring plan.\n\nTo: Prof. Helen Okafor <helen.okafor@univ.edu> (Department Chair)\n\nReplying to:\nFrom: Prof. Helen Okafor <helen.okafor@univ.edu> (Department Chair)\nSubject: Faculty meeting today\n\nDear all,\n\nA reminder that today's faculty meeting starts at 3 pm in the conference room. We'll discuss the hiring plan.\n\nHelen"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n1.8K\t/memories\n1.8K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Re: Faculty meeting today",
+        "body": "Hi Helen,\n\nI won't be able to make today's faculty meeting, since I'm still helping my mom recover from surgery. I'm happy to send you my thoughts on the hiring plan.\n\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:06.923Z",
+      "session": "05_chair_meeting",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nDear Helen,\n\nI won't be able to attend today's faculty meeting, and I'm sorry for the short notice. I'll send you my input on the hiring plan by Monday.\n\nBest regards,\nJane Doe\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:09.134Z",
+      "session": "05_chair_meeting",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_Dnj2CULmXzQhn9aw6Hm1FnzT",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:09.134Z",
+      "session": "05_chair_meeting",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_Dnj2CULmXzQhn9aw6Hm1FnzT",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n1.8K\t/memories\n1.8K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:11.679Z",
+      "session": "05_chair_meeting",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_GGi2LtNiFuBwiSrI3iUSnrQc",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:11.679Z",
+      "session": "05_chair_meeting",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_GGi2LtNiFuBwiSrI3iUSnrQc",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n     9\t\n    10\t- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:16.025Z",
+      "session": "05_chair_meeting",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_pqE6Vmvg0Xbgk0oFDRDGKRRy",
+      "arguments": {
+        "command": "insert",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": 10,
+        "insert_text": "- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details.",
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:16.025Z",
+      "session": "05_chair_meeting",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_pqE6Vmvg0Xbgk0oFDRDGKRRy",
+      "output": "The file /memories/email_preferences.md has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "05_chair_meeting",
+      "type": "message",
+      "role": "assistant",
+      "text": "Noted for future drafts to Helen: a more formal greeting and sign-off, no personal details, and clear follow-up commitments with deadlines when you provide them."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "05_chair_meeting",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n\n- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-09-29"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "message",
+      "role": "user",
+      "text": "Tell Ravi I'll read the outline by Friday. I can't do Monday next week, my kid has a school event, so can we meet Wednesday instead?\n\nTo: Prof. Ravi Mehta <ravi.mehta@univ.edu> (faculty (peer, frequent collaborator))\n\nReplying to:\nFrom: Prof. Ravi Mehta <ravi.mehta@univ.edu> (faculty (peer, frequent collaborator))\nSubject: Paper outline\n\nHi Jane,\n\nI put the revised outline in our shared folder. Could you take a look before we meet next week?\n\nRavi"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n2.2K\t/memories\n2.2K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Re: Paper outline",
+        "body": "Dear Ravi,\n\nThank you for sharing the revised outline! I'll read it by Friday. Unfortunately, I have a conflict on Monday, so would Wednesday work for our meeting instead?\n\nBest regards,\nJane Doe"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:18.905Z",
+      "session": "06_peer_review",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi Ravi,\n\nI'll read the outline by Friday. Monday's out for me, my kid has a school event. Could we meet Wednesday instead?\n\nJane\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:22.486Z",
+      "session": "06_peer_review",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_qfVyGwECgm6Cz4raPJJtJh2X",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:22.486Z",
+      "session": "06_peer_review",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_qfVyGwECgm6Cz4raPJJtJh2X",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n2.2K\t/memories\n2.2K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:26.878Z",
+      "session": "06_peer_review",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_yn5IJxttm0YS6ko6TZ8x0iOy",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:26.878Z",
+      "session": "06_peer_review",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_yn5IJxttm0YS6ko6TZ8x0iOy",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n     9\t\n    10\t- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n    11\t- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:35.800Z",
+      "session": "06_peer_review",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_xq7FigTy0ocMKPFPx0TXZ085",
+      "arguments": {
+        "command": "str_replace",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": "- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing.",
+        "new_str": "- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing. Get straight to the commitment/request without routine thanks or apologetic padding (\"Unfortunately\"). Use natural language such as \"Monday's out for me\" and \"Could we meet Wednesday instead?\" Retain a brief personal/family reason when Jane supplies it for a close collaborator (e.g., \"my kid has a school event\"), rather than replacing it with a generic conflict; this differs from student, TA, and chair emails.",
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:35.800Z",
+      "session": "06_peer_review",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_xq7FigTy0ocMKPFPx0TXZ085",
+      "output": "The memory file has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.995Z",
+      "session": "06_peer_review",
+      "type": "message",
+      "role": "assistant",
+      "text": "Noted—I'll keep emails to Ravi brief and informal, and retain personal context you provide rather than making it a generic conflict."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.995Z",
+      "session": "06_peer_review",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing. Get straight to the commitment/request without routine thanks or apologetic padding (\"Unfortunately\"). Use natural language such as \"Monday's out for me\" and \"Could we meet Wednesday instead?\" Retain a brief personal/family reason when Jane supplies it for a close collaborator (e.g., \"my kid has a school event\"), rather than replacing it with a generic conflict; this differs from student, TA, and chair emails.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n\n- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "session_start",
+      "kind": "feedback",
+      "scenario_date": "2026-10-01"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "message",
+      "role": "user",
+      "text": "Tell the class the project proposal deadline moved from Oct 23 to Oct 27, because the midterm is the same week.\n\nTo: CS 4100 students (mailing list) <cs4100-students@univ.edu> (students in Jane's class)"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "arguments": {
+        "command": "view",
+        "path": "/memories"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "memory",
+      "tool_call_id": "call_prefill_view",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n2.6K\t/memories\n2.6K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "tool_call",
+      "role": "assistant",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "arguments": {
+        "subject": "Project proposal deadline moved",
+        "body": "Hi everyone,\n\nI'm writing to let you know that the project proposal deadline has been moved from October 23 to October 27, since the midterm falls in the same week.\n\nBest,\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "tool_result",
+      "prefilled": true,
+      "tool": "save_draft",
+      "tool_call_id": "call_prefill_draft",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "message",
+      "role": "assistant",
+      "prefilled": true,
+      "text": "I've saved a draft for you to review."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:43.996Z",
+      "session": "07_class_deadline",
+      "type": "message",
+      "role": "user",
+      "text": "I edited it before sending. Here's what went out:\n\n---\nHi everyone,\n\nThe project proposal deadline has moved from October 23 to October 27, since the midterm is the same week. I know that week is a lot, so plan ahead and come to office hours if you want feedback on your idea early.\n\nProf. Doe\n---"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:45.528Z",
+      "session": "07_class_deadline",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_uSiQr94BK8V5fn4po3c876Tq",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:45.528Z",
+      "session": "07_class_deadline",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_uSiQr94BK8V5fn4po3c876Tq",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n2.6K\t/memories\n2.6K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:47.268Z",
+      "session": "07_class_deadline",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_QIcuGEisloxLxpr4wQ5hROp1",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:47.268Z",
+      "session": "07_class_deadline",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_QIcuGEisloxLxpr4wQ5hROp1",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing. Get straight to the commitment/request without routine thanks or apologetic padding (\"Unfortunately\"). Use natural language such as \"Monday's out for me\" and \"Could we meet Wednesday instead?\" Retain a brief personal/family reason when Jane supplies it for a close collaborator (e.g., \"my kid has a school event\"), rather than replacing it with a generic conflict; this differs from student, TA, and chair emails.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n     9\t\n    10\t- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n    11\t- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:51.161Z",
+      "session": "07_class_deadline",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_FPRTw1Sp8rhxfTzOjWBdnE5X",
+      "arguments": {
+        "command": "str_replace",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": "- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\".",
+        "new_str": "- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\". Get straight to the announcement (omit \"I'm writing to let you know\"). For deadline changes, retain relevant academic context (e.g., a midterm the same week). Jane's edited announcement briefly acknowledged the heavy workload and encouraged planning ahead and coming to office hours for early feedback; favor this practical, supportive tone without inventing office-hour times or policies.",
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:51.162Z",
+      "session": "07_class_deadline",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_FPRTw1Sp8rhxfTzOjWBdnE5X",
+      "output": "The memory file has been edited."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:53.414Z",
+      "session": "07_class_deadline",
+      "type": "message",
+      "role": "assistant",
+      "text": "Got it—direct announcement, a brief acknowledgment of the workload, and practical encouragement. I’ll use “Prof. Doe” without an extra closing for class emails."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:53.414Z",
+      "session": "07_class_deadline",
+      "type": "memory_snapshot",
+      "files": {
+        "/memories/email_preferences.md": "# Jane's email writing preferences\n\n- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing. Get straight to the commitment/request without routine thanks or apologetic padding (\"Unfortunately\"). Use natural language such as \"Monday's out for me\" and \"Could we meet Wednesday instead?\" Retain a brief personal/family reason when Jane supplies it for a close collaborator (e.g., \"my kid has a school event\"), rather than replacing it with a generic conflict; this differs from student, TA, and chair emails.\n- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\". Get straight to the announcement (omit \"I'm writing to let you know\"). For deadline changes, retain relevant academic context (e.g., a midterm the same week). Jane's edited announcement briefly acknowledged the heavy workload and encouraged planning ahead and coming to office hours for early feedback; favor this practical, supportive tone without inventing office-hour times or policies.\n- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n\n- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:53.414Z",
+      "session": "final",
+      "type": "session_start",
+      "kind": "final_task",
+      "scenario_date": "2026-10-05"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:53.414Z",
+      "session": "final",
+      "type": "message",
+      "role": "user",
+      "text": "Tell Susan I can't do lunch Thursday, my kid's home sick. Maybe next week?\n\nTo: Prof. Susan Albright <susan.albright@univ.edu> (faculty (peer))"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:55.357Z",
+      "session": "final",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_VIRck4gASixigSpcEk3lZ3Fd",
+      "arguments": {
+        "command": "view",
+        "path": "/memories",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:55.358Z",
+      "session": "final",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_VIRck4gASixigSpcEk3lZ3Fd",
+      "output": "Here're the files and directories up to 2 levels deep in /memories, excluding hidden items and node_modules:\n3.0K\t/memories\n3.0K\t/memories/email_preferences.md"
+    },
+    {
+      "timestamp": "2026-11-16T18:13:57.269Z",
+      "session": "final",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "memory",
+      "tool_call_id": "call_xLDyMc0GdpY7ga2EXw5VXfSb",
+      "arguments": {
+        "command": "view",
+        "path": "/memories/email_preferences.md",
+        "view_range": null,
+        "file_text": null,
+        "old_str": null,
+        "new_str": null,
+        "insert_line": null,
+        "insert_text": null,
+        "old_path": null,
+        "new_path": null
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:57.269Z",
+      "session": "final",
+      "type": "tool_result",
+      "tool": "memory",
+      "tool_call_id": "call_xLDyMc0GdpY7ga2EXw5VXfSb",
+      "output": "Here's the content of /memories/email_preferences.md with line numbers:\n     1\t# Jane's email writing preferences\n     2\t\n     3\t- For familiar faculty collaborators such as Ravi Mehta, use a warm, informal, concise tone: \"Hi Ravi,\" and sign \"Jane\", rather than titles or a formal closing. Get straight to the commitment/request without routine thanks or apologetic padding (\"Unfortunately\"). Use natural language such as \"Monday's out for me\" and \"Could we meet Wednesday instead?\" Retain a brief personal/family reason when Jane supplies it for a close collaborator (e.g., \"my kid has a school event\"), rather than replacing it with a generic conflict; this differs from student, TA, and chair emails.\n     4\t- Acknowledge good news in the incoming email enthusiastically before addressing logistics (e.g., congratulations on a grant).\n     5\t- For student-facing logistical announcements, omit personal reasons such as doctor's appointments even if Jane supplies them as context. Prefer a brief, direct announcement with the new day, time, and location; logistical explanations can go in parentheses.\n     6\t- For class emails, use \"Hi everyone,\" and sign \"Prof. Doe\" without an additional closing such as \"Best\". Get straight to the announcement (omit \"I'm writing to let you know\"). For deadline changes, retain relevant academic context (e.g., a midterm the same week). Jane's edited announcement briefly acknowledged the heavy workload and encouraged planning ahead and coming to office hours for early feedback; favor this practical, supportive tone without inventing office-hour times or policies.\n     7\t- Use direct, natural scheduling language, such as \"I need to push Thursday\" and \"Could we do next Tuesday...?\" Include any availability Jane supplies; do not invent it.\n     8\t- For individual undergraduate replies, use \"Hi [first name],\" and sign \"Prof. Doe\" without \"Best\". When denying a request, be direct, briefly explain the reason, and offer concrete alternatives or support when known; avoid apologetic padding (\"Unfortunately\") or generic well-wishes. In her edited extension denial, Jane explained that other deadlines are not grounds for an extension and provided the applicable late-submission option and office hours; do not invent such details or assume they apply to other assignments.\n     9\t\n    10\t- For coverage requests to her graduate TA, use a concise, collegial request (\"Could you cover...\") with \"Hi [first name],\" and sign \"Jane\". Keep family/medical reasons private, using a vague explanation such as \"Something came up\" if needed. Include known coverage times. Jane's edited request offered to take a section in return rather than effusive thanks; include reciprocal offers when authorized, without inventing commitments.\n    11\t- For emails to Department Chair Helen Okafor, prefer a concise, professional tone: \"Dear Helen,\" and \"Best regards,\\nJane Doe\". In a meeting-absence reply, Jane omitted family/medical context, briefly apologized for short notice, and replaced a tentative offer of input with a specific commitment and deadline. Keep personal context private; use concrete follow-up commitments when authorized, but do not invent deadlines or medical details."
+    },
+    {
+      "timestamp": "2026-11-16T18:13:58.841Z",
+      "session": "final",
+      "type": "tool_call",
+      "role": "assistant",
+      "tool": "save_draft",
+      "tool_call_id": "call_6F9yh0H0BLr0GP0Y0prxPwbH",
+      "arguments": {
+        "subject": "Lunch Thursday",
+        "body": "Hi Susan,\n\nI can't do lunch Thursday—my kid's home sick. Could we do next week instead?\n\nJane"
+      }
+    },
+    {
+      "timestamp": "2026-11-16T18:13:58.841Z",
+      "session": "final",
+      "type": "tool_result",
+      "tool": "save_draft",
+      "tool_call_id": "call_6F9yh0H0BLr0GP0Y0prxPwbH",
+      "output": "{\"status\": \"draft saved; the user will review it\"}"
+    },
+    {
+      "timestamp": "2026-11-16T18:14:00.276Z",
+      "session": "final",
+      "type": "message",
+      "role": "assistant",
+      "text": "Draft saved:\n\nHi Susan,\n\nI can't do lunch Thursday—my kid's home sick. Could we do next week instead?\n\nJane"
+    }
+  ]
+}

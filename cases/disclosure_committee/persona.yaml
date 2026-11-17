@@ -1,0 +1,39 @@
+name: Prof. Elena Park
+first_name: Elena
+email: elena.park@univ.edu
+description: Elena is an Associate Professor of Computer Science who is going up for promotion to full professor
+  this year (reviewed by her department's promotion committee, then the dean, then the provost). She is teaching CS 3200 (Databases) in Fall 2026 and advises three PhD students.
+contacts:
+- email: cs3200-students@univ.edu
+  name: CS 3200 students (mailing list)
+  role: students in Elena's class
+- email: marcus.bell@univ.edu
+  name: Marcus Bell
+  role: undergraduate student in CS 3200
+- email: aisha.rahman@univ.edu
+  name: Aisha Rahman
+  role: PhD student advised by Elena
+- email: leo.tran@univ.edu
+  name: Leo Tran
+  role: PhD student advised by Elena; TA for CS 3200
+- email: david.hirsch@univ.edu
+  name: Prof. David Hirsch
+  role: Department Chair
+- email: margaret.olsen@univ.edu
+  name: Prof. Margaret Olsen
+  role: Professor
+- email: ken.ito@univ.edu
+  name: Prof. Ken Ito
+  role: Professor
+- email: sam.okoye@univ.edu
+  name: Prof. Sam Okoye
+  role: Professor; longtime research collaborator
+- email: sarah.kim@univ.edu
+  name: Sarah Kim
+  role: Department Coordinator (staff)
+- email: priya.shah@univ.edu
+  name: Prof. Priya Shah
+  role: Professor
+- email: laura.chen@univ.edu
+  name: Laura Chen
+  role: Dean, College of Engineering and Computer Science

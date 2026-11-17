@@ -1,0 +1,31 @@
+# Scored against the agent's memory after the last feedback round (see METRICS.md).
+# Each preference gets one outcome: correct | wrong_scope | missed. Each one-off: wrongly_saved | not_saved.
+# Each outdated item: kept | retired.
+# Each item must be inferable from the feedback rounds, or stated as the professor's own view in
+# participant.md (see METRICS.md).
+preferences:            # lasting rules the agent should have learned, each with its scope (optional)
+- id: P1
+  rule: Gives no health or family reasons for schedule changes.
+  scope: Emails to students (the class list and individual students); not peer faculty.
+  evidence: [01_office_hours]     # feedback_rounds file names (without .md) that show it
+- id: P2
+  rule: Signs emails to students with just "Jane", with no closing such as "Best,".
+  scope: Emails to students.
+  evidence: [01_office_hours]
+one_offs:               # edits that should NOT become rules (optional)
+- id: O1
+  edit: Moved office hours from Thursday to Friday (a schedule fact, not a preference).
+  evidence: [01_office_hours]
+outdated:               # her old practice that later edits replaced, with what replaced it (optional)
+- id: R1
+  practice: Closes emails to students with "Best," (in the starting memory).
+  replaced_by: No closing, just "Jane" (P2).
+  evidence: [01_office_hours]
+
+# The final draft. draft_correct = 1 only if every must holds and no must_not holds.
+# One checkable statement per line.
+must:
+- Says Tuesday's lecture will be a recorded video.
+- Says the recording will be posted by Monday night.
+must_not:
+- Mentions Jane's son, his school, or any family reason.

@@ -1,0 +1,12 @@
+name: Prof. Jane Doe
+first_name: Jane
+email: jane.doe@univ.edu
+description: >-
+  Jane is an Associate Professor of Computer Science teaching CS 4100 (Artificial Intelligence) this fall.
+contacts:
+- email: cs4100-students@univ.edu
+  name: CS 4100 students (mailing list)
+  role: students in Jane's class
+- email: helen.okafor@univ.edu
+  name: Helen Okafor
+  role: Associate Professor of Computer Science (peer faculty)

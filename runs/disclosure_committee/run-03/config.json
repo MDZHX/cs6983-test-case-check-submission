@@ -1,0 +1,38 @@
+{
+  "mode": "simulated_user",
+  "user": "scripted: requests, revisions and comments come from the case files",
+  "condition": "full",
+  "condition_description": "full case: starting memory, feedback rounds, final task",
+  "case": {
+    "id": "disclosure_committee",
+    "folder": "cases/disclosure_committee",
+    "sha256_of_folder": "741515e22d1a7ab8a8fe461c19e4c4c3489e968667c5d5e8b99403e604a319ca"
+  },
+  "agent": {
+    "name": "email-assistant-baseline",
+    "loop": "testbed/agent.py run_turn",
+    "tools": [
+      "memory",
+      "lookup_contact",
+      "save_draft"
+    ],
+    "memory": "agent-managed /memories files"
+  },
+  "model": {
+    "id": "gpt-6.1-sol",
+    "reasoning_effort": null,
+    "max_output_tokens": 16000,
+    "api": "OpenAI Responses API, store=False"
+  },
+  "judge": {
+    "model": "gpt-6.1-sol",
+    "code": "testbed/scorer.py"
+  },
+  "settings": {
+    "max_tool_loop_iterations": 20,
+    "feedback_sessions": 8
+  },
+  "started_at": "2026-11-16T20:41:48.648Z",
+  "finished_at": "2026-11-16T20:43:46.397Z",
+  "cost_usd": 0.1004
+}

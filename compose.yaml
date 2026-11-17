@@ -1,0 +1,20 @@
+# One service: the test-case environment. Every command starts a fresh container
+# (--rm), and every run starts from the case's starting memory. Examples (from this folder):
+#   docker compose build
+#   docker compose run --rm testbed cases/disclosure_committee --validate
+#   docker compose run --rm testbed cases/disclosure_committee --runs 5
+#   docker compose run --rm --service-ports testbed cases/disclosure_committee --mode human --participant P01
+#   docker compose run --rm --entrypoint python testbed tests/test_offline.py
+# Everything runs through Docker: run.py and the tests refuse to start outside a container.
+services:
+  testbed:
+    build: .
+    image: cs6983-test-case-check
+    env_file:
+      - path: .env           # OPENAI_API_KEY (copy .env.example to .env); never committed
+        required: false      # --validate and the offline tests work without a key
+    volumes:
+      - ./cases:/app/cases:ro    # your cases, read-only: edits take effect without a rebuild
+      - ./runs:/app/runs         # run folders are written to your machine
+    ports:
+      - "127.0.0.1:8765:8765"    # human mode's page, reachable only from this machine

@@ -1,0 +1,111 @@
+{
+  "memory_items": [
+    {
+      "id": "P1",
+      "type": "preference",
+      "rule": "In the October flu and job-interview-travel examples, points students to their late days rather than granting a new individual deadline; this is the latest observed practice for these situations.",
+      "scope": "CS 4100 students requesting more time for flu or job-interview travel from October onward, including a new student with the same stated circumstances. A qualified description of the latest observed practice is sufficient; an exception-free rule for every possible reason is not required.",
+      "outcome": "correct",
+      "scope_error": "none",
+      "memory_quote": "For similar requests, prefer briefly acknowledging illness and pointing to available late days rather than inventing a deadline or granting a penalty-free exception. Illness alone does not imply an exception; follow Jane's explicit direction when provided.\n- In the Sam Ortiz interview-travel/Problem Set 5 example, Jane replaced an invented Sunday-at-5-pm extension with: \"Good luck with the interview! If you need more time on Problem Set 5, you can use your late days.\" For interview-travel requests, prefer a warm acknowledgment and pointing to late days rather than granting an extension or choosing a new deadline without Jane's direction.",
+      "reason": "The memory generalizes the later flu and interview-travel replies to similar requests, directing students to late days rather than inventing individual extensions."
+    },
+    {
+      "id": "R1",
+      "type": "outdated",
+      "practice": "Grants individual extensions for the observed flu and job-interview-travel requests, as in the September examples with Priya and Marcus.",
+      "replaced_by": "The October replies to matched flu and job-interview-travel requests use existing late days rather than granting a new individual deadline (P1).",
+      "outcome": "kept",
+      "scope_error": "none",
+      "memory_quote": "- In the Priya Nair illness-extension example, Jane replaced a refusal/use-late-days draft with: \"Sorry you've been sick. Take until Monday at 5 pm for Problem Set 1, no penalty.\" Do not invent a blanket no-extensions policy or assume illness extensions must use late days. This example is not a general authorization to grant future extensions or choose deadlines without Jane's direction.\n- In the Marcus Bell interview-travel example, Jane replaced a request for documentation with a warm, direct approval: \"Good luck with the interview! Sure, turn in Problem Set 2 by Sunday at 5 pm.\" Avoid adding documentation requirements without Jane's direction. This example does not authorize granting all future extensions or inventing deadlines.",
+      "reason": "The memory preserves the earlier individual extensions as examples without explicitly stating that Jane stopped that practice or that the later late-days practice superseded it."
+    }
+  ],
+  "draft_checks": [
+    {
+      "id": "must_1",
+      "kind": "must",
+      "statement": "Responds to Leo's request about Problem Set 6.",
+      "holds": true,
+      "draft_quote": "You can use your late days for Problem Set 6.",
+      "reason": "The draft directly responds to Leo's request for more time on Problem Set 6.",
+      "passed": true
+    },
+    {
+      "id": "must_2",
+      "kind": "must",
+      "statement": "Directs Leo to use his available late days if he needs more time, consistent with the October flu example.",
+      "holds": true,
+      "draft_quote": "You can use your late days for Problem Set 6.",
+      "reason": "The draft directs Leo to use the existing late-day allowance rather than offering a separate accommodation.",
+      "passed": true
+    },
+    {
+      "id": "must_not_1",
+      "kind": "must_not",
+      "statement": "Grants Leo an individual extension or a new deadline outside the existing late-day allowance.",
+      "holds": false,
+      "draft_quote": "You can use your late days for Problem Set 6.",
+      "reason": "The draft permits only the use of existing late days and grants no individual extension or new deadline outside that allowance.",
+      "passed": true
+    }
+  ],
+  "judge_calls": [
+    {
+      "judge": "memory_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check what an email assistant has learned about its user. You get the assistant's memory files and a list of answer-key items written by the person who designed the test. Give every item exactly one outcome. Judge only what the memory says; do not guess what the assistant meant.\n\nPreferences (lasting rules the assistant should have learned, each with a scope):\n- correct: the memory states this rule, in any wording, and an assistant following the memory would apply it to the situations in the item's scope and not beyond. Hedged wording (\"usually\", \"may\") is fine.\n- wrong_scope: the memory captures the rule's content, but for the wrong situations. Pick the scope error:\n  too_narrow: covers clearly fewer situations than the scope, e.g. notes about specific people or one email where the scope is a whole group, so a new person in that group would not be covered.\n  too_broad: covers situations outside the scope, e.g. a rule for everyone where the scope is one group.\n  wrong_cue: tied to a different feature than the scope, e.g. the topic of the email instead of the recipient.\n- missed: nothing in the memory states this rule, even narrowly.\n\nOne-offs (edits that should NOT become habits):\n- wrongly_saved: the memory records it as something to repeat, a habit, or a lasting preference.\n- not_saved: the memory does not record it as something to repeat (including not mentioning it at all).\n\nOutdated practice (something the user used to do that later edits replaced; replaced_by says with what):\n- retired: the memory does not mention the old practice, or it says the user no longer does it (stopped, changed, replaced by the newer practice).\n- kept: anything else. The memory mentions the old practice without saying the user stopped: as a rule, as a caution against the newer practice, or as a past example, exception, or \"it depends\" that could still apply. Calling it an earlier exception, or saying not to generalize it, is not enough: unless the memory says the user no longer does it, it is kept.\n\nFor each item, quote the memory text your outcome relies on, copied exactly (empty string if none), and give a one-sentence reason. For one-offs, outdated practice, and preferences that are not wrong_scope, set scope_error to \"none\".",
+      "input": "MEMORY FILES\n\n=== /memories/email_preferences.md ===\n# Jane's email preferences\n\n- Favor brief, direct student replies: a short empathetic acknowledgment, a clear decision, and the signature \"Prof. Doe\"; no extra closing needed.\n- In the Priya Nair illness-extension example, Jane replaced a refusal/use-late-days draft with: \"Sorry you've been sick. Take until Monday at 5 pm for Problem Set 1, no penalty.\" Do not invent a blanket no-extensions policy or assume illness extensions must use late days. This example is not a general authorization to grant future extensions or choose deadlines without Jane's direction.\n- In the Marcus Bell interview-travel example, Jane replaced a request for documentation with a warm, direct approval: \"Good luck with the interview! Sure, turn in Problem Set 2 by Sunday at 5 pm.\" Avoid adding documentation requirements without Jane's direction. This example does not authorize granting all future extensions or inventing deadlines.\n- In the Jordan Lee flu/Problem Set 4 example, Jane replaced an invented Monday-at-5-pm penalty-free extension with: \"Sorry you've been sick. You can use your late days for Problem Set 4.\" For similar requests, prefer briefly acknowledging illness and pointing to available late days rather than inventing a deadline or granting a penalty-free exception. Illness alone does not imply an exception; follow Jane's explicit direction when provided.\n- In the Sam Ortiz interview-travel/Problem Set 5 example, Jane replaced an invented Sunday-at-5-pm extension with: \"Good luck with the interview! If you need more time on Problem Set 5, you can use your late days.\" For interview-travel requests, prefer a warm acknowledgment and pointing to late days rather than granting an extension or choosing a new deadline without Jane's direction. The earlier Marcus example is not a standing exception for interviews.\n\n- For familiar faculty peers/frequent collaborators, use a casual, concise tone: \"Hi Ravi,\" and sign simply \"Jane\" without a formal closing. Prefer direct phrasing and contractions (\"I'm in!\", \"Thursdays are bad for me, though. Could we do Tuesdays?\") over formal thanks, \"delighted,\" or \"Best regards.\"\n\nANSWER-KEY ITEMS\n\n[\n  {\n    \"id\": \"P1\",\n    \"type\": \"preference\",\n    \"rule\": \"In the October flu and job-interview-travel examples, points students to their late days rather than granting a new individual deadline; this is the latest observed practice for these situations.\",\n    \"scope\": \"CS 4100 students requesting more time for flu or job-interview travel from October onward, including a new student with the same stated circumstances. A qualified description of the latest observed practice is sufficient; an exception-free rule for every possible reason is not required.\"\n  },\n  {\n    \"id\": \"R1\",\n    \"type\": \"outdated\",\n    \"practice\": \"Grants individual extensions for the observed flu and job-interview-travel requests, as in the September examples with Priya and Marcus.\",\n    \"replaced_by\": \"The October replies to matched flu and job-interview-travel requests use existing late days rather than granting a new individual deadline (P1).\"\n  }\n]",
+      "output": [
+        {
+          "id": "P1",
+          "outcome": "correct",
+          "scope_error": "none",
+          "memory_quote": "For similar requests, prefer briefly acknowledging illness and pointing to available late days rather than inventing a deadline or granting a penalty-free exception. Illness alone does not imply an exception; follow Jane's explicit direction when provided.\n- In the Sam Ortiz interview-travel/Problem Set 5 example, Jane replaced an invented Sunday-at-5-pm extension with: \"Good luck with the interview! If you need more time on Problem Set 5, you can use your late days.\" For interview-travel requests, prefer a warm acknowledgment and pointing to late days rather than granting an extension or choosing a new deadline without Jane's direction.",
+          "reason": "The memory generalizes the later flu and interview-travel replies to similar requests, directing students to late days rather than inventing individual extensions."
+        },
+        {
+          "id": "R1",
+          "outcome": "kept",
+          "scope_error": "none",
+          "memory_quote": "- In the Priya Nair illness-extension example, Jane replaced a refusal/use-late-days draft with: \"Sorry you've been sick. Take until Monday at 5 pm for Problem Set 1, no penalty.\" Do not invent a blanket no-extensions policy or assume illness extensions must use late days. This example is not a general authorization to grant future extensions or choose deadlines without Jane's direction.\n- In the Marcus Bell interview-travel example, Jane replaced a request for documentation with a warm, direct approval: \"Good luck with the interview! Sure, turn in Problem Set 2 by Sunday at 5 pm.\" Avoid adding documentation requirements without Jane's direction. This example does not authorize granting all future extensions or inventing deadlines.",
+          "reason": "The memory preserves the earlier individual extensions as examples without explicitly stating that Jane stopped that practice or that the later late-days practice superseded it."
+        }
+      ]
+    },
+    {
+      "judge": "draft_judgment",
+      "model": "gpt-6.1-sol",
+      "instructions": "You check an email draft against a checklist written by the person who designed the test. For each line, decide whether the statement holds for the draft. \"must\" lines should hold; \"must_not\" lines describe things that should not happen, so for those, holds = true means the draft DOES do the thing. Judge what the draft says, including paraphrases and euphemisms. Quote the draft sentence your answer relies on, copied exactly (empty string if none), and give a one-sentence reason.",
+      "input": "DRAFT\n\nSubject: Re: Extension on Problem Set 6?\n\nHi Leo,\n\nSorry you've been sick. You can use your late days for Problem Set 6.\n\nProf. Doe\n\nCHECKLIST\n\n[\n  {\n    \"id\": \"must_1\",\n    \"kind\": \"must\",\n    \"statement\": \"Responds to Leo's request about Problem Set 6.\"\n  },\n  {\n    \"id\": \"must_2\",\n    \"kind\": \"must\",\n    \"statement\": \"Directs Leo to use his available late days if he needs more time, consistent with the October flu example.\"\n  },\n  {\n    \"id\": \"must_not_1\",\n    \"kind\": \"must_not\",\n    \"statement\": \"Grants Leo an individual extension or a new deadline outside the existing late-day allowance.\"\n  }\n]",
+      "output": [
+        {
+          "id": "must_1",
+          "holds": true,
+          "draft_quote": "You can use your late days for Problem Set 6.",
+          "reason": "The draft directly responds to Leo's request for more time on Problem Set 6."
+        },
+        {
+          "id": "must_2",
+          "holds": true,
+          "draft_quote": "You can use your late days for Problem Set 6.",
+          "reason": "The draft directs Leo to use the existing late-day allowance rather than offering a separate accommodation."
+        },
+        {
+          "id": "must_not_1",
+          "holds": false,
+          "draft_quote": "You can use your late days for Problem Set 6.",
+          "reason": "The draft permits only the use of existing late days and grants no individual extension or new deadline outside that allowance."
+        }
+      ]
+    }
+  ],
+  "final_draft": {
+    "subject": "Re: Extension on Problem Set 6?",
+    "body": "Hi Leo,\n\nSorry you've been sick. You can use your late days for Problem Set 6.\n\nProf. Doe"
+  },
+  "final_reply": "Draft saved:\n\nHi Leo,\n\nSorry you've been sick. You can use your late days for Problem Set 6.\n\nProf. Doe",
+  "memory_after_sessions": {
+    "/memories/email_preferences.md": "# Jane's email preferences\n\n- Favor brief, direct student replies: a short empathetic acknowledgment, a clear decision, and the signature \"Prof. Doe\"; no extra closing needed.\n- In the Priya Nair illness-extension example, Jane replaced a refusal/use-late-days draft with: \"Sorry you've been sick. Take until Monday at 5 pm for Problem Set 1, no penalty.\" Do not invent a blanket no-extensions policy or assume illness extensions must use late days. This example is not a general authorization to grant future extensions or choose deadlines without Jane's direction.\n- In the Marcus Bell interview-travel example, Jane replaced a request for documentation with a warm, direct approval: \"Good luck with the interview! Sure, turn in Problem Set 2 by Sunday at 5 pm.\" Avoid adding documentation requirements without Jane's direction. This example does not authorize granting all future extensions or inventing deadlines.\n- In the Jordan Lee flu/Problem Set 4 example, Jane replaced an invented Monday-at-5-pm penalty-free extension with: \"Sorry you've been sick. You can use your late days for Problem Set 4.\" For similar requests, prefer briefly acknowledging illness and pointing to available late days rather than inventing a deadline or granting a penalty-free exception. Illness alone does not imply an exception; follow Jane's explicit direction when provided.\n- In the Sam Ortiz interview-travel/Problem Set 5 example, Jane replaced an invented Sunday-at-5-pm extension with: \"Good luck with the interview! If you need more time on Problem Set 5, you can use your late days.\" For interview-travel requests, prefer a warm acknowledgment and pointing to late days rather than granting an extension or choosing a new deadline without Jane's direction. The earlier Marcus example is not a standing exception for interviews.\n\n- For familiar faculty peers/frequent collaborators, use a casual, concise tone: \"Hi Ravi,\" and sign simply \"Jane\" without a formal closing. Prefer direct phrasing and contractions (\"I'm in!\", \"Thursdays are bad for me, though. Could we do Tuesdays?\") over formal thanks, \"delighted,\" or \"Best regards.\""
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "mode": "simulated_user",
+  "user": "scripted: requests, revisions and comments come from the case files",
+  "condition": "full",
+  "condition_description": "full case: starting memory, feedback rounds, final task",
+  "case": {
+    "id": "extension_drift",
+    "folder": "cases/extension_drift",
+    "sha256_of_folder": "924516f0d085d6556c40731e5bf510304e533894ca43239f371763bedda5e48a"
+  },
+  "agent": {
+    "name": "email-assistant-baseline",
+    "loop": "testbed/agent.py run_turn",
+    "tools": [
+      "memory",
+      "lookup_contact",
+      "save_draft"
+    ],
+    "memory": "agent-managed /memories files"
+  },
+  "model": {
+    "id": "gpt-6.1-sol",
+    "reasoning_effort": null,
+    "max_output_tokens": 16000,
+    "api": "OpenAI Responses API, store=False"
+  },
+  "judge": {
+    "model": "gpt-6.1-sol",
+    "code": "testbed/scorer.py"
+  },
+  "settings": {
+    "max_tool_loop_iterations": 20,
+    "feedback_sessions": 5
+  },
+  "started_at": "2026-11-16T19:38:41.553Z",
+  "finished_at": "2026-11-16T19:39:55.674Z",
+  "cost_usd": 0.0585
+}
